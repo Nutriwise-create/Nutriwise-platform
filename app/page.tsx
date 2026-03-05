@@ -1,36 +1,35 @@
 "use client";
 
+import Image from "next/image";
 import { FaLeaf, FaHandsHelping, FaHeart } from "react-icons/fa";
 import { MdHealthAndSafety } from "react-icons/md";
 import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
-export default function Home(){
+export default function Home() {
 
-const testimonials=[
-{name:"Priya Mehta",city:"Mumbai",text:"Nutrition guidance helped me regain strength during chemotherapy."},
-{name:"Ramesh Shah",city:"Delhi",text:"Nutrition support helped me maintain energy levels."},
-{name:"Anjali Iyer",city:"Chennai",text:"Dietary support helped me tolerate treatment."},
-{name:"Arjun Nair",city:"Bangalore",text:"Nutrition guidance helped my recovery."},
-{name:"Kavita Desai",city:"Ahmedabad",text:"Food support made treatment easier."},
-{name:"Sneha Joshi",city:"Pune",text:"Compassionate guidance throughout therapy."}
+const testimonials = [
+{ name:"Priya Mehta", city:"Mumbai", text:"Nutrition guidance helped me regain strength during chemotherapy." },
+{ name:"Ramesh Shah", city:"Delhi", text:"Nutrition support helped me maintain energy levels during treatment." },
+{ name:"Anjali Iyer", city:"Chennai", text:"Dietary support helped me tolerate treatment better." },
+{ name:"Arjun Nair", city:"Bangalore", text:"Nutrition guidance supported my recovery journey." },
+{ name:"Kavita Desai", city:"Ahmedabad", text:"Nutrition planning made treatment easier." },
+{ name:"Sneha Joshi", city:"Pune", text:"Compassionate guidance throughout therapy." }
 ];
 
-return(
+return (
 
 <main className="page">
 
-{/* NAV */}
+{/* NAVIGATION */}
 
 <nav className="nav">
-
 <a>About Us</a>
 <a>Our Nutritionists</a>
 <a>Stories of Strength</a>
 <a>Book Consultation</a>
 <a>Login</a>
-
 </nav>
 
 
@@ -38,7 +37,12 @@ return(
 
 <div className="logoWrap">
 
-<img src="/logo.png" className="logo"/>
+<Image
+src="/logo.png"
+alt="NutriWise Logo"
+width={230}
+height={230}
+/>
 
 </div>
 
@@ -70,9 +74,10 @@ digestive challenges and muscle weakness.
 </p>
 
 <p>
-Oncology nutrition supports immune function, preserves strength
-and helps patients tolerate treatment better while improving
-overall quality of life during therapy.
+Oncology nutrition helps support immune function, preserve strength
+and improve treatment tolerance. NutriWise focuses on compassionate,
+evidence-based nutritional guidance that helps patients through
+recovery and healing.
 </p>
 
 </section>
@@ -87,27 +92,21 @@ overall quality of life during therapy.
 <div className="cards">
 
 <div className="card">
-
 <FaLeaf size={40}/>
 <h3>Personalized Oncology Nutrition</h3>
 <p>Nutrition plans tailored to cancer type and treatment stage.</p>
-
 </div>
 
 <div className="card">
-
 <MdHealthAndSafety size={40}/>
 <h3>Managing Treatment Side Effects</h3>
-<p>Guidance for fatigue, nausea and appetite loss.</p>
-
+<p>Guidance for nausea, fatigue and appetite loss.</p>
 </div>
 
 <div className="card">
-
 <FaHandsHelping size={40}/>
 <h3>Continuous Support</h3>
-<p>Compassionate guidance during the entire treatment journey.</p>
-
+<p>Compassionate nutrition guidance during treatment.</p>
 </div>
 
 </div>
@@ -115,7 +114,7 @@ overall quality of life during therapy.
 </section>
 
 
-{/* TESTIMONIALS */}
+{/* PATIENT EXPERIENCES */}
 
 <section className="section">
 
@@ -128,12 +127,16 @@ overall quality of life during therapy.
 {testimonials.map((t,i)=>(
 <div className="testimonial" key={i}>
 
-<img src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${30+i}.jpg`} />
+<Image
+src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${40+i}.jpg`}
+alt="patient"
+width={70}
+height={70}
+/>
 
 <p>"{t.text}"</p>
 
 <strong>{t.name}</strong>
-
 <span>{t.city}</span>
 
 </div>
@@ -142,12 +145,16 @@ overall quality of life during therapy.
 {testimonials.map((t,i)=>(
 <div className="testimonial" key={"copy"+i}>
 
-<img src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${30+i}.jpg`} />
+<Image
+src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${40+i}.jpg`}
+alt="patient"
+width={70}
+height={70}
+/>
 
 <p>"{t.text}"</p>
 
 <strong>{t.name}</strong>
-
 <span>{t.city}</span>
 
 </div>
@@ -160,11 +167,17 @@ overall quality of life during therapy.
 </section>
 
 
-{/* SUPPORT PATIENT */}
+{/* SUPPORT A PATIENT */}
 
 <section className="section support">
 
-<h2><FaHeart/> Support a Patient</h2>
+<h2 className="supportTitle">
+
+<FaHeart style={{marginRight:"10px"}}/>
+
+Support a Patient
+
+</h2>
 
 <p>
 Cancer journeys can be overwhelming. Your support helps provide
@@ -178,9 +191,7 @@ Support Now
 </button>
 
 <p className="counter">
-
 Patients Supported: 124
-
 </p>
 
 </section>
@@ -190,7 +201,12 @@ Patients Supported: 124
 
 <footer className="footer">
 
-<img src="/lotus.png" className="lotus"/>
+<Image
+src="/lotus.png"
+alt="Lotus"
+width={70}
+height={70}
+/>
 
 <p className="tagline">
 
@@ -209,7 +225,7 @@ NutriWise – Supporting patients with compassionate oncology nutrition guidance
 </footer>
 
 
-{/* FLOATING SOCIAL */}
+{/* FLOATING SOCIAL ICONS */}
 
 <div className="floater">
 
@@ -239,15 +255,12 @@ linear-gradient(180deg,#f8edff,#fde2f3);
 display:flex;
 justify-content:flex-end;
 gap:30px;
+font-weight:500;
 }
 
 .logoWrap{
 text-align:center;
 margin:40px 0;
-}
-
-.logo{
-height:140px;
 }
 
 .hero{
@@ -304,12 +317,6 @@ text-align:center;
 box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
 
-.testimonial img{
-width:70px;
-height:70px;
-border-radius:50%;
-}
-
 .support{
 text-align:center;
 }
@@ -327,10 +334,6 @@ cursor:pointer;
 .footer{
 text-align:center;
 margin-top:80px;
-}
-
-.lotus{
-height:70px;
 }
 
 .policies{
@@ -361,6 +364,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.15);
 
 </main>
 
-)
+);
 
 }
