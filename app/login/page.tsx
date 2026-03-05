@@ -1,41 +1,15 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 
 export default function Login(){
-
-const [form,setForm]=useState({
-email:"",
-password:""
-})
-
-function handleChange(e:any){
-setForm({
-...form,
-[e.target.name]:e.target.value
-})
-}
-
-function handleSubmit(e:any){
-e.preventDefault()
-
-if(!form.email || !form.password){
-alert("Please enter email and password")
-return
-}
-
-alert("Login successful")
-
-console.log(form)
-}
 
 return(
 
 <main className="page">
 
 
-{/* NAVBAR */}
+{/* NAVIGATION */}
 
 <nav className="nav">
 
@@ -57,74 +31,54 @@ return(
 {/* LOGO */}
 
 <div className="logoWrap">
+
 <img src="/Logo.png" className="logo"/>
-</div>
 
-
-
-{/* HEADER */}
-
-<section className="header">
-
-<h1>Welcome Back</h1>
-
-<p>
-Your health journey deserves support, understanding and care.
-Log in to continue your journey with NutriWise and connect with
-our oncology nutrition experts who are here to guide you
-with compassion every step of the way.
+<p className="tagline">
+Supporting strength, healing and nourishment through
+every step of your journey.
 </p>
 
-</section>
+</div>
 
 
 
 {/* LOGIN FORM */}
 
-<section className="formSection">
+<section className="loginSection">
 
-<form onSubmit={handleSubmit} className="form">
+<div className="loginCard">
 
-<input
-name="email"
-type="email"
-placeholder="Email Address"
-required
-onChange={handleChange}
-/>
+<h2>Welcome Back</h2>
 
-<input
-name="password"
-type="password"
-placeholder="Password"
-required
-onChange={handleChange}
-/>
+<input type="email" placeholder="Email Address" required />
 
-<button type="submit">
-Login
-</button>
+<input type="password" placeholder="Password" required />
 
+<button className="loginBtn">Login</button>
 
 <p className="signup">
-
-Don't have an account?
-
-<Link href="/signup"> Sign Up</Link>
-
+New here? <a href="#">Create an account</a>
 </p>
 
-</form>
+</div>
 
 </section>
 
 
 
-{/* LOTUS IMAGE */}
+{/* FOOTER */}
 
-<div className="lotusWrap">
+<footer className="footer">
+
 <img src="/lotus.png" className="lotus"/>
-</div>
+
+<p>
+NutriWise stands beside patients and families with
+compassionate oncology nutrition guidance.
+</p>
+
+</footer>
 
 
 
@@ -168,95 +122,129 @@ padding:40px;
 
 background:linear-gradient(
 180deg,
-#fff7fb 0%,
-#f3ecff 35%,
-#efe8ff 65%,
-#fdf4ff 100%
+#fff7fb,
+#f3ecff,
+#efe8ff,
+#fdf4ff
 );
 
 color:#4a3ca6;
 }
 
+
+
 .nav{
 display:flex;
 justify-content:space-between;
-margin-bottom:20px;
 }
 
 .links{
 display:flex;
-gap:28px;
-font-weight:500;
+gap:25px;
+flex-wrap:wrap;
 }
+
+
 
 .logoWrap{
 display:flex;
-justify-content:center;
-margin-bottom:30px;
+flex-direction:column;
+align-items:center;
+margin:40px 0;
+text-align:center;
 }
 
 .logo{
-width:280px;
-filter:drop-shadow(0 0 25px rgba(180,120,255,0.5));
+width:260px;
+margin-bottom:10px;
 }
 
-.header{
-text-align:center;
-max-width:700px;
-margin:auto;
-margin-bottom:40px;
+.tagline{
+max-width:400px;
+font-size:14px;
+opacity:0.8;
 }
 
-.formSection{
-max-width:500px;
-margin:auto;
+
+
+.loginSection{
+display:flex;
+justify-content:center;
 }
 
-.form{
+
+
+.loginCard{
+
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+
+max-width:400px;
+width:100%;
+
 display:flex;
 flex-direction:column;
-gap:16px;
+gap:15px;
+
 }
 
-input{
+
+
+.loginCard input{
+
 padding:12px;
-border-radius:10px;
+border-radius:8px;
 border:1px solid #ddd;
-font-size:14px;
+
 }
 
-button{
-background:#6d4df5;
+
+
+.loginBtn{
+
+background:#5e3ed6;
 color:white;
 padding:14px;
 border:none;
-border-radius:20px;
+border-radius:10px;
+font-weight:600;
 cursor:pointer;
-font-weight:500;
-margin-top:10px;
+
 }
+
+
 
 .signup{
 text-align:center;
 font-size:14px;
 }
 
-.signup a{
-margin-left:6px;
-color:#6d4df5;
-font-weight:600;
+
+
+.footer{
+
+margin-top:80px;
+text-align:center;
+padding:40px;
+
+background:linear-gradient(
+180deg,
+#f3ecff,
+#efe8ff
+);
+
 }
 
-.lotusWrap{
-display:flex;
-justify-content:center;
-margin-top:60px;
-}
+
 
 .lotus{
-width:120px;
-opacity:0.8;
+width:70px;
+margin-bottom:10px;
 }
+
+
 
 .floaters{
 position:fixed;
@@ -281,6 +269,26 @@ justify-content:center;
 width:22px;
 height:22px;
 filter:brightness(0) invert(1);
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.page{
+padding:20px;
+}
+
+.logo{
+width:200px;
+}
+
+.loginCard{
+padding:30px;
+}
+
 }
 
 `}</style>
