@@ -1,9 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { FaHeart, FaLeaf, FaHandsHelping, FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
-import { FaXTwitter } from "react-icons/fa6"
+
+import { FaLeaf, FaHandsHelping, FaHeart } from "react-icons/fa"
 import { MdHealthAndSafety, MdEmail } from "react-icons/md"
+
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
 
 export default function Home(){
 
@@ -68,6 +71,7 @@ return(
 
 <img
 src="/Logo.png"
+alt="NutriWise"
 className="logo"
 />
 
@@ -98,13 +102,13 @@ strength, healing and dignity throughout the cancer journey.
 
 <p>
 Cancer treatment places enormous stress on the body.
-Chemotherapy, radiation therapy and surgery often cause
-fatigue, appetite loss and digestive discomfort.
+Chemotherapy, radiation therapy and surgery often cause fatigue,
+appetite loss and digestive discomfort.
 </p>
 
 <p>
 Balanced oncology nutrition helps maintain strength,
-improve immunity and support recovery throughout treatment.
+improve immunity and support recovery during treatment.
 </p>
 
 </section>
@@ -119,21 +123,21 @@ improve immunity and support recovery throughout treatment.
 <div className="cards">
 
 <div className="card">
-<FaLeaf size={35}/>
+<FaLeaf size={36}/>
 <h3>Personalized Oncology Nutrition</h3>
-<p>Plans designed according to cancer type and treatment stage.</p>
+<p>Nutrition plans tailored to cancer type and treatment stage.</p>
 </div>
 
 <div className="card">
-<MdHealthAndSafety size={35}/>
+<MdHealthAndSafety size={36}/>
 <h3>Managing Treatment Side Effects</h3>
-<p>Support for appetite loss, digestion issues and fatigue.</p>
+<p>Support for appetite loss, fatigue and digestive discomfort.</p>
 </div>
 
 <div className="card">
-<FaHandsHelping size={35}/>
+<FaHandsHelping size={36}/>
 <h3>Continuous Nutrition Support</h3>
-<p>Compassionate guidance for patients and caregivers.</p>
+<p>Compassionate guidance throughout the healing journey.</p>
 </div>
 
 </div>
@@ -196,7 +200,7 @@ Support a Patient
 
 <p>
 Your support helps provide oncology nutrition guidance
-to patients who cannot access nutrition support.
+to patients who cannot access professional nutrition care.
 </p>
 
 <button className="supportBtn">
@@ -233,7 +237,7 @@ NutriWise – Supporting patients with compassionate oncology nutrition guidance
 </footer>
 
 
-{/* POLICY POPUPS */}
+{/* POLICY MODALS */}
 
 {policy &&(
 
@@ -246,25 +250,22 @@ NutriWise – Supporting patients with compassionate oncology nutrition guidance
 {policy==="privacy" &&(
 <p>
 NutriWise respects your privacy and collects only necessary
-information required to provide nutrition guidance and communication.
-Your information is never sold or shared with third parties.
+information required to provide nutrition guidance.
 </p>
 )}
 
 {policy==="refund" &&(
 <p>
 Refunds are available if requested within 10 days of purchase.
-Refunds may not be granted if consultations have already been completed,
-nutrition plans delivered or misuse of services is detected.
-NutriWise reserves the right to review refund requests to prevent abuse.
+Refunds may not be granted if consultations are completed
+or services delivered.
 </p>
 )}
 
 {policy==="legal" &&(
 <p>
 NutriWise provides nutritional guidance and educational support.
-Our services do not replace medical advice or treatment provided by
-licensed healthcare professionals.
+Our services do not replace professional medical advice.
 </p>
 )}
 
@@ -294,7 +295,14 @@ licensed healthcare professionals.
 .page{
 font-family:Poppins;
 padding:30px;
-background:linear-gradient(180deg,#ffe6f3,#e8dcff,#c8b6ff);
+
+background:linear-gradient(
+180deg,
+#ffe6f3,
+#e9dcff,
+#c7b2ff
+);
+
 color:#4b2ca3;
 }
 
@@ -313,21 +321,19 @@ font-weight:500;
 display:flex;
 justify-content:center;
 margin-top:10px;
+margin-bottom:10px;
+position:relative;
 }
 
 .logo{
-width:210px;
-filter:drop-shadow(0 0 25px rgba(155,100,255,0.5));
+width:260px;
+filter:drop-shadow(0 0 40px rgba(180,120,255,0.6));
 }
 
 .hero{
 text-align:center;
 max-width:850px;
 margin:30px auto;
-}
-
-.hero h1{
-font-size:36px;
 }
 
 .section{
@@ -412,6 +418,7 @@ border-radius:25px;
 .lotus{
 width:70px;
 margin-bottom:10px;
+filter:drop-shadow(0 0 25px rgba(180,120,255,0.6));
 }
 
 .policies{
