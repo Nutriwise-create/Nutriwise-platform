@@ -8,22 +8,20 @@ import { MdEmail } from "react-icons/md";
 
 export default function Home(){
 
-const testimonials = [
+const testimonials=[
 {name:"Priya Mehta",city:"Mumbai",text:"Nutrition guidance helped me regain strength during chemotherapy."},
-{name:"Ramesh Shah",city:"Delhi",text:"Nutrition support helped me maintain my energy levels during treatment."},
-{name:"Anjali Iyer",city:"Chennai",text:"Small dietary changes made my treatment days easier."},
-{name:"Arjun Nair",city:"Bangalore",text:"Nutrition support helped me slowly regain strength."},
-{name:"Kavita Desai",city:"Ahmedabad",text:"Food guidance helped me tolerate treatment better."},
-{name:"Sneha Joshi",city:"Pune",text:"Compassionate and supportive nutritional guidance."},
-{name:"Rahul Verma",city:"Indore",text:"Nutrition support gave me strength during recovery."},
-{name:"Deepa Nair",city:"Kochi",text:"I learned how nutrition can support healing."}
+{name:"Ramesh Shah",city:"Delhi",text:"Nutrition support helped me maintain energy levels."},
+{name:"Anjali Iyer",city:"Chennai",text:"Dietary support helped me tolerate treatment."},
+{name:"Arjun Nair",city:"Bangalore",text:"Nutrition guidance helped my recovery."},
+{name:"Kavita Desai",city:"Ahmedabad",text:"Food support made treatment easier."},
+{name:"Sneha Joshi",city:"Pune",text:"Compassionate guidance throughout therapy."}
 ];
 
 return(
 
 <main className="page">
 
-{/* NAVIGATION */}
+{/* NAV */}
 
 <nav className="nav">
 
@@ -67,15 +65,14 @@ healing and dignity throughout the cancer journey.
 
 <p>
 Cancer treatment places immense stress on the body. Chemotherapy,
-radiation therapy and surgeries often bring side effects such as
-fatigue, nausea, appetite loss and muscle weakness.
+radiation therapy and surgeries often cause fatigue, appetite loss,
+digestive challenges and muscle weakness.
 </p>
 
 <p>
-Oncology nutrition helps preserve strength, support immunity
-and improve tolerance to treatment. NutriWise focuses on
-compassionate nutritional guidance designed to support
-patients during treatment and recovery.
+Oncology nutrition supports immune function, preserves strength
+and helps patients tolerate treatment better while improving
+overall quality of life during therapy.
 </p>
 
 </section>
@@ -101,7 +98,7 @@ patients during treatment and recovery.
 
 <MdHealthAndSafety size={40}/>
 <h3>Managing Treatment Side Effects</h3>
-<p>Guidance for nausea, fatigue and appetite loss.</p>
+<p>Guidance for fatigue, nausea and appetite loss.</p>
 
 </div>
 
@@ -109,7 +106,7 @@ patients during treatment and recovery.
 
 <FaHandsHelping size={40}/>
 <h3>Continuous Support</h3>
-<p>Compassionate nutrition guidance throughout treatment.</p>
+<p>Compassionate guidance during the entire treatment journey.</p>
 
 </div>
 
@@ -118,7 +115,7 @@ patients during treatment and recovery.
 </section>
 
 
-{/* PATIENT EXPERIENCE */}
+{/* TESTIMONIALS */}
 
 <section className="section">
 
@@ -126,12 +123,12 @@ patients during treatment and recovery.
 
 <div className="carousel">
 
-<div className="carouselTrack">
+<div className="track">
 
 {testimonials.map((t,i)=>(
 <div className="testimonial" key={i}>
 
-<img src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${40+i}.jpg`} />
+<img src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${30+i}.jpg`} />
 
 <p>"{t.text}"</p>
 
@@ -145,7 +142,7 @@ patients during treatment and recovery.
 {testimonials.map((t,i)=>(
 <div className="testimonial" key={"copy"+i}>
 
-<img src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${40+i}.jpg`} />
+<img src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${30+i}.jpg`} />
 
 <p>"{t.text}"</p>
 
@@ -180,7 +177,11 @@ Support Now
 
 </button>
 
-<p className="counter">Patients Supported: 124</p>
+<p className="counter">
+
+Patients Supported: 124
+
+</p>
 
 </section>
 
@@ -197,6 +198,14 @@ NutriWise – Supporting patients with compassionate oncology nutrition guidance
 
 </p>
 
+<div className="policies">
+
+<a>Privacy Policy</a>
+<a>Refund Policy</a>
+<a>Legal Disclaimer</a>
+
+</div>
+
 </footer>
 
 
@@ -205,15 +214,10 @@ NutriWise – Supporting patients with compassionate oncology nutrition guidance
 <div className="floater">
 
 <a href="https://wa.me/918320867088" target="_blank"><FaWhatsapp/></a>
-
 <a href="https://instagram.com/nutriwise_26" target="_blank"><FaInstagram/></a>
-
 <a href="https://linkedin.com/company/nutriwise26" target="_blank"><FaLinkedin/></a>
-
 <a href="https://youtube.com/@NutriWise_26" target="_blank"><FaYoutube/></a>
-
 <a href="https://x.com/NutriWise26" target="_blank"><FaXTwitter/></a>
-
 <a href="mailto:join.nutriwise@outlook.com"><MdEmail/></a>
 
 </div>
@@ -222,17 +226,19 @@ NutriWise – Supporting patients with compassionate oncology nutrition guidance
 <style jsx>{`
 
 .page{
-background:linear-gradient(180deg,#f8edff,#fde2f3);
 font-family:Poppins;
 padding:40px;
 color:#333;
+background:
+radial-gradient(circle at top right,#ffd6f0,transparent 40%),
+radial-gradient(circle at bottom left,#e0c6ff,transparent 40%),
+linear-gradient(180deg,#f8edff,#fde2f3);
 }
 
 .nav{
 display:flex;
 justify-content:flex-end;
 gap:30px;
-font-weight:500;
 }
 
 .logoWrap{
@@ -241,12 +247,12 @@ margin:40px 0;
 }
 
 .logo{
-height:130px;
+height:140px;
 }
 
 .hero{
 text-align:center;
-max-width:800px;
+max-width:850px;
 margin:auto;
 }
 
@@ -266,9 +272,10 @@ gap:30px;
 }
 
 .card{
-background:white;
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(10px);
 padding:30px;
-border-radius:16px;
+border-radius:18px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 text-align:center;
 }
@@ -277,10 +284,15 @@ text-align:center;
 overflow:hidden;
 }
 
-.carouselTrack{
+.track{
 display:flex;
 gap:25px;
 animation:scroll 35s linear infinite;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
 }
 
 .testimonial{
@@ -296,11 +308,6 @@ box-shadow:0 10px 20px rgba(0,0,0,0.08);
 width:70px;
 height:70px;
 border-radius:50%;
-}
-
-@keyframes scroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
 }
 
 .support{
@@ -324,6 +331,13 @@ margin-top:80px;
 
 .lotus{
 height:70px;
+}
+
+.policies{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
 }
 
 .floater{
