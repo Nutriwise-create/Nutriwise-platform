@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { FaLeaf, FaHandsHelping, FaHeart } from "react-icons/fa";
+import { MdHealthAndSafety } from "react-icons/md";
 import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { FaLeaf, FaHandsHelping } from "react-icons/fa";
-import { MdHealthAndSafety } from "react-icons/md";
 
 export default function Home(){
 
@@ -15,31 +14,24 @@ const testimonials = [
 {name:"Anjali Iyer",city:"Chennai",text:"Small dietary changes made my treatment days easier."},
 {name:"Arjun Nair",city:"Bangalore",text:"Nutrition support helped me slowly regain strength."},
 {name:"Kavita Desai",city:"Ahmedabad",text:"Food guidance helped me tolerate treatment better."},
-{name:"Sneha Joshi",city:"Pune",text:"Compassionate and supportive nutritional guidance."}
+{name:"Sneha Joshi",city:"Pune",text:"Compassionate and supportive nutritional guidance."},
+{name:"Rahul Verma",city:"Indore",text:"Nutrition support gave me strength during recovery."},
+{name:"Deepa Nair",city:"Kochi",text:"I learned how nutrition can support healing."}
 ];
-
-const [index,setIndex] = useState(0);
-
-useEffect(()=>{
-const timer=setInterval(()=>{
-setIndex((prev)=>(prev+1)%testimonials.length)
-},3000);
-return ()=>clearInterval(timer)
-},[]);
 
 return(
 
 <main className="page">
 
-{/* NAV */}
+{/* NAVIGATION */}
 
 <nav className="nav">
 
-<a href="#">About Us</a>
-<a href="#">Our Nutritionists</a>
-<a href="#">Stories of Strength</a>
-<a href="#">Book Consultation</a>
-<a href="#">Login</a>
+<a>About Us</a>
+<a>Our Nutritionists</a>
+<a>Stories of Strength</a>
+<a>Book Consultation</a>
+<a>Login</a>
 
 </nav>
 
@@ -60,8 +52,8 @@ return(
 <h1>Medicine treats cancer, but nutrition strengthens your body</h1>
 
 <p>
-Compassionate oncology nutrition guidance supporting strength, healing
-and dignity throughout the cancer journey.
+Compassionate oncology nutrition guidance supporting strength,
+healing and dignity throughout the cancer journey.
 </p>
 
 </section>
@@ -75,15 +67,15 @@ and dignity throughout the cancer journey.
 
 <p>
 Cancer treatment places immense stress on the body. Chemotherapy,
-radiation therapy and surgeries often bring side effects like
+radiation therapy and surgeries often bring side effects such as
 fatigue, nausea, appetite loss and muscle weakness.
 </p>
 
 <p>
-Proper oncology nutrition helps maintain strength, support immune
-function and improve tolerance to treatment. NutriWise focuses on
-compassionate, evidence-based nutrition guidance that supports
-patients through recovery and healing.
+Oncology nutrition helps preserve strength, support immunity
+and improve tolerance to treatment. NutriWise focuses on
+compassionate nutritional guidance designed to support
+patients during treatment and recovery.
 </p>
 
 </section>
@@ -98,21 +90,27 @@ patients through recovery and healing.
 <div className="cards">
 
 <div className="card">
-<FaLeaf size={42}/>
+
+<FaLeaf size={40}/>
 <h3>Personalized Oncology Nutrition</h3>
 <p>Nutrition plans tailored to cancer type and treatment stage.</p>
+
 </div>
 
 <div className="card">
-<MdHealthAndSafety size={42}/>
+
+<MdHealthAndSafety size={40}/>
 <h3>Managing Treatment Side Effects</h3>
-<p>Guidance to support nausea, fatigue and appetite loss.</p>
+<p>Guidance for nausea, fatigue and appetite loss.</p>
+
 </div>
 
 <div className="card">
-<FaHandsHelping size={42}/>
+
+<FaHandsHelping size={40}/>
 <h3>Continuous Support</h3>
-<p>Compassionate nutrition guidance through treatment.</p>
+<p>Compassionate nutrition guidance throughout treatment.</p>
+
 </div>
 
 </div>
@@ -120,20 +118,17 @@ patients through recovery and healing.
 </section>
 
 
-{/* TESTIMONIALS */}
+{/* PATIENT EXPERIENCE */}
 
 <section className="section">
 
 <h2>Patient Experiences</h2>
 
-<div className="testimonialRow">
+<div className="carousel">
 
-{[0,1,2].map((i)=>{
+<div className="carouselTrack">
 
-const t=testimonials[(index+i)%testimonials.length];
-
-return(
-
+{testimonials.map((t,i)=>(
 <div className="testimonial" key={i}>
 
 <img src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${40+i}.jpg`} />
@@ -145,34 +140,47 @@ return(
 <span>{t.city}</span>
 
 </div>
+))}
 
-)
+{testimonials.map((t,i)=>(
+<div className="testimonial" key={"copy"+i}>
 
-})}
+<img src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${40+i}.jpg`} />
+
+<p>"{t.text}"</p>
+
+<strong>{t.name}</strong>
+
+<span>{t.city}</span>
+
+</div>
+))}
+
+</div>
 
 </div>
 
 </section>
 
 
-{/* SUPPORT */}
+{/* SUPPORT PATIENT */}
 
 <section className="section support">
 
-<h2>Support a Patient</h2>
+<h2><FaHeart/> Support a Patient</h2>
 
 <p>
-Cancer journeys can be overwhelming. Your support can help provide
+Cancer journeys can be overwhelming. Your support helps provide
 nutrition guidance to patients who may not otherwise access care.
 </p>
 
 <button className="supportBtn">
+
 Support Now
+
 </button>
 
-<p className="counter">
-Patients Supported: 124
-</p>
+<p className="counter">Patients Supported: 124</p>
 
 </section>
 
@@ -183,15 +191,11 @@ Patients Supported: 124
 
 <img src="/lotus.png" className="lotus"/>
 
-<div className="policies">
+<p className="tagline">
 
-<button>Privacy Policy</button>
+NutriWise – Supporting patients with compassionate oncology nutrition guidance
 
-<button>Refund Policy</button>
-
-<button>Legal Disclaimer</button>
-
-</div>
+</p>
 
 </footer>
 
@@ -237,7 +241,7 @@ margin:40px 0;
 }
 
 .logo{
-height:120px;
+height:130px;
 }
 
 .hero{
@@ -247,12 +251,12 @@ margin:auto;
 }
 
 .section{
-max-width:1000px;
+max-width:1100px;
 margin:80px auto;
 }
 
 .section h2{
-color:#4A2C6D;
+color:#4a2c6d;
 }
 
 .cards{
@@ -269,16 +273,21 @@ box-shadow:0 10px 25px rgba(0,0,0,0.08);
 text-align:center;
 }
 
-.testimonialRow{
+.carousel{
+overflow:hidden;
+}
+
+.carouselTrack{
 display:flex;
 gap:25px;
+animation:scroll 35s linear infinite;
 }
 
 .testimonial{
+min-width:260px;
 background:white;
 padding:20px;
 border-radius:15px;
-width:280px;
 text-align:center;
 box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
@@ -289,6 +298,11 @@ height:70px;
 border-radius:50%;
 }
 
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
+}
+
 .support{
 text-align:center;
 }
@@ -296,7 +310,7 @@ text-align:center;
 .supportBtn{
 background:#c79cff;
 border:none;
-padding:14px 28px;
+padding:14px 30px;
 border-radius:25px;
 color:white;
 font-weight:600;
@@ -305,15 +319,11 @@ cursor:pointer;
 
 .footer{
 text-align:center;
-margin-top:60px;
+margin-top:80px;
 }
 
 .lotus{
-height:60px;
-}
-
-.policies button{
-margin:10px;
+height:70px;
 }
 
 .floater{
@@ -328,7 +338,7 @@ font-size:26px;
 
 .floater a{
 background:white;
-padding:10px;
+padding:12px;
 border-radius:50%;
 box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
@@ -337,6 +347,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.15);
 
 </main>
 
-);
+)
 
 }
