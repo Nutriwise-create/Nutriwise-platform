@@ -1,14 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import { useState } from "react"
-
-import { FaLeaf, FaHandsHelping, FaHeart } from "react-icons/fa"
-import { MdHealthAndSafety } from "react-icons/md"
-
-import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
+import { FaHeart, FaLeaf, FaHandsHelping, FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
-import { MdEmail } from "react-icons/md"
+import { MdHealthAndSafety, MdEmail } from "react-icons/md"
 
 export default function Home(){
 
@@ -34,7 +29,7 @@ text:"Nutrition support helped me maintain energy during treatment."
 name:"Anjali Iyer",
 city:"Chennai",
 image:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200",
-text:"Dietary guidance helped me manage side effects during therapy."
+text:"Dietary guidance helped me manage treatment side effects."
 },
 
 {
@@ -57,13 +52,11 @@ return(
 <div></div>
 
 <div className="navLinks">
-
 <a>About Us</a>
 <a>Our Nutritionists</a>
 <a>Stories of Strength</a>
 <a>Book Consultation</a>
 <a>Login</a>
-
 </div>
 
 </nav>
@@ -73,13 +66,9 @@ return(
 
 <div className="logoWrap">
 
-<Image
-src="/logo.png"
-alt="NutriWise"
-width={260}
-height={260}
-priority
-style={{objectFit:"contain"}}
+<img
+src="/Logo.png"
+className="logo"
 />
 
 </div>
@@ -114,8 +103,8 @@ fatigue, appetite loss and digestive discomfort.
 </p>
 
 <p>
-Balanced oncology nutrition supports immunity, strength
-and recovery, helping patients tolerate treatment better.
+Balanced oncology nutrition helps maintain strength,
+improve immunity and support recovery throughout treatment.
 </p>
 
 </section>
@@ -132,19 +121,19 @@ and recovery, helping patients tolerate treatment better.
 <div className="card">
 <FaLeaf size={35}/>
 <h3>Personalized Oncology Nutrition</h3>
-<p>Nutrition plans tailored to treatment stage and patient needs.</p>
+<p>Plans designed according to cancer type and treatment stage.</p>
 </div>
 
 <div className="card">
 <MdHealthAndSafety size={35}/>
 <h3>Managing Treatment Side Effects</h3>
-<p>Support for fatigue, appetite loss and digestion.</p>
+<p>Support for appetite loss, digestion issues and fatigue.</p>
 </div>
 
 <div className="card">
 <FaHandsHelping size={35}/>
 <h3>Continuous Nutrition Support</h3>
-<p>Compassionate guidance during treatment.</p>
+<p>Compassionate guidance for patients and caregivers.</p>
 </div>
 
 </div>
@@ -165,7 +154,7 @@ and recovery, helping patients tolerate treatment better.
 {testimonials.map((t,i)=>(
 <div className="testimonial" key={i}>
 
-<img src={t.image} />
+<img src={t.image}/>
 
 <p>"{t.text}"</p>
 
@@ -178,7 +167,7 @@ and recovery, helping patients tolerate treatment better.
 {testimonials.map((t,i)=>(
 <div className="testimonial" key={"copy"+i}>
 
-<img src={t.image} />
+<img src={t.image}/>
 
 <p>"{t.text}"</p>
 
@@ -195,23 +184,19 @@ and recovery, helping patients tolerate treatment better.
 </section>
 
 
-{/* SUPPORT SECTION */}
+{/* SUPPORT */}
 
 <section className="support">
 
 <h2>
-
 <FaHeart className="heart"/>
-
 Support a Patient
-
 <FaHeart className="heart"/>
-
 </h2>
 
 <p>
 Your support helps provide oncology nutrition guidance
-to patients who cannot access support.
+to patients who cannot access nutrition support.
 </p>
 
 <button className="supportBtn">
@@ -228,6 +213,8 @@ Patients Supported: 124
 {/* FOOTER */}
 
 <footer className="footer">
+
+<img src="/lotus.png" className="lotus"/>
 
 <p className="tagline">
 
@@ -246,7 +233,7 @@ NutriWise – Supporting patients with compassionate oncology nutrition guidance
 </footer>
 
 
-{/* POLICY POPUP */}
+{/* POLICY POPUPS */}
 
 {policy &&(
 
@@ -257,42 +244,28 @@ NutriWise – Supporting patients with compassionate oncology nutrition guidance
 <button onClick={()=>setPolicy("")}>Close</button>
 
 {policy==="privacy" &&(
-
 <p>
-
 NutriWise respects your privacy and collects only necessary
-information to provide nutrition guidance and communication.
-
+information required to provide nutrition guidance and communication.
+Your information is never sold or shared with third parties.
 </p>
-
 )}
 
 {policy==="refund" &&(
-
 <p>
-
-Refunds are available if requested within **10 days of purchase**.
-
-Refunds may not be granted if services have already been
-delivered, consultations completed, or misuse is detected.
-
-NutriWise reserves the right to review refund requests
-to prevent abuse of services.
-
+Refunds are available if requested within 10 days of purchase.
+Refunds may not be granted if consultations have already been completed,
+nutrition plans delivered or misuse of services is detected.
+NutriWise reserves the right to review refund requests to prevent abuse.
 </p>
-
 )}
 
 {policy==="legal" &&(
-
 <p>
-
 NutriWise provides nutritional guidance and educational support.
-Our services do not replace medical advice or treatment from
+Our services do not replace medical advice or treatment provided by
 licensed healthcare professionals.
-
 </p>
-
 )}
 
 </div>
@@ -302,15 +275,15 @@ licensed healthcare professionals.
 )}
 
 
-{/* FLOATING SOCIAL ICONS */}
+{/* FLOATING SOCIAL */}
 
 <div className="floater">
 
-<a href="https://wa.me/918320867088"><FaWhatsapp/></a>
-<a href="https://instagram.com/nutriwise_26"><FaInstagram/></a>
-<a href="https://linkedin.com/company/nutriwise26"><FaLinkedin/></a>
-<a href="https://youtube.com/@NutriWise_26"><FaYoutube/></a>
-<a href="https://x.com/NutriWise26"><FaXTwitter/></a>
+<a href="https://wa.me/918320867088" target="_blank"><FaWhatsapp/></a>
+<a href="https://instagram.com/nutriwise_26" target="_blank"><FaInstagram/></a>
+<a href="https://linkedin.com/company/nutriwise26" target="_blank"><FaLinkedin/></a>
+<a href="https://youtube.com/@NutriWise_26" target="_blank"><FaYoutube/></a>
+<a href="https://x.com/NutriWise26" target="_blank"><FaXTwitter/></a>
 <a href="mailto:join.nutriwise@outlook.com"><MdEmail/></a>
 
 </div>
@@ -320,16 +293,9 @@ licensed healthcare professionals.
 
 .page{
 font-family:Poppins;
-padding:40px;
-
-background:linear-gradient(
-180deg,
-#fff0f6 0%,
-#f2e6ff 45%,
-#d1b8ff 100%
-);
-
-color:#4e2fa5;
+padding:30px;
+background:linear-gradient(180deg,#ffe6f3,#e8dcff,#c8b6ff);
+color:#4b2ca3;
 }
 
 .nav{
@@ -340,18 +306,28 @@ justify-content:space-between;
 .navLinks{
 display:flex;
 gap:28px;
+font-weight:500;
 }
 
 .logoWrap{
 display:flex;
 justify-content:center;
-margin:40px 0 20px 0;
+margin-top:10px;
+}
+
+.logo{
+width:210px;
+filter:drop-shadow(0 0 25px rgba(155,100,255,0.5));
 }
 
 .hero{
 text-align:center;
-max-width:800px;
-margin:auto;
+max-width:850px;
+margin:30px auto;
+}
+
+.hero h1{
+font-size:36px;
 }
 
 .section{
@@ -369,8 +345,8 @@ gap:30px;
 background:white;
 padding:30px;
 border-radius:20px;
+box-shadow:0 15px 30px rgba(0,0,0,0.08);
 text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .carousel{
@@ -379,8 +355,8 @@ overflow:hidden;
 
 .track{
 display:flex;
-gap:25px;
-animation:scroll 30s linear infinite;
+gap:30px;
+animation:scroll 28s linear infinite;
 }
 
 @keyframes scroll{
@@ -391,81 +367,70 @@ animation:scroll 30s linear infinite;
 .testimonial{
 min-width:260px;
 background:white;
-padding:20px;
-border-radius:18px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
 text-align:center;
-box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
 
 .testimonial img{
 width:70px;
 height:70px;
 border-radius:50%;
-object-fit:cover;
 margin-bottom:10px;
 }
 
 .support{
 text-align:center;
-margin:80px auto;
+padding:70px 20px;
 }
 
 .heart{
-color:#7a49ff;
-margin:0 10px;
+color:#7b3fff;
+margin:0 8px;
 }
 
 .supportBtn{
-background:#5e3bf1;
-border:none;
-padding:14px 30px;
-border-radius:30px;
+margin-top:20px;
+padding:14px 36px;
+background:#6d39ff;
 color:white;
-font-weight:600;
+border:none;
+border-radius:30px;
+font-size:16px;
 cursor:pointer;
 }
 
 .footer{
+margin-top:80px;
 text-align:center;
-margin-top:60px;
+padding:50px;
+background:linear-gradient(180deg,#d7c4ff,#b79aff);
+border-radius:25px;
+}
+
+.lotus{
+width:70px;
+margin-bottom:10px;
 }
 
 .policies{
-margin-top:20px;
+margin-top:15px;
 display:flex;
 justify-content:center;
 gap:20px;
-cursor:pointer;
-}
-
-.floater{
-position:fixed;
-right:20px;
-top:40%;
-display:flex;
-flex-direction:column;
-gap:15px;
-font-size:26px;
-}
-
-.floater a{
-color:#4e2fa5;
-background:white;
-padding:12px;
-border-radius:50%;
-box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 
 .modal{
 position:fixed;
 top:0;
 left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.4);
+right:0;
+bottom:0;
+background:rgba(0,0,0,0.6);
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 }
 
 .modalBox{
@@ -475,10 +440,26 @@ border-radius:15px;
 max-width:500px;
 }
 
+.floater{
+position:fixed;
+right:20px;
+top:40%;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.floater a{
+background:#5b34d6;
+color:white;
+padding:12px;
+border-radius:50%;
+font-size:20px;
+}
+
 `}</style>
 
 </main>
 
 )
-
 }
