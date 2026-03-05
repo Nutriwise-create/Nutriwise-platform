@@ -1,159 +1,320 @@
-"use client";
+"use client"
 
-import Image from "next/image";
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
+import { MdEmail } from "react-icons/md"
 
-export default function About() {
-  return (
-    <main className="about-page">
+export default function About(){
 
-      {/* HERO SECTION */}
-      <section className="about-hero">
-        <h1>About NutriWise</h1>
-        <p>
-          Supporting strength, healing, and dignity through compassionate nutrition care.
-        </p>
-      </section>
+return(
+
+<main className="page">
+
+{/* NAVBAR */}
+
+<nav className="nav">
+<div></div>
+
+<div className="navLinks">
+<a href="/">Home</a>
+<a>Our Nutritionists</a>
+<a>Stories of Strength</a>
+<a>Book Consultation</a>
+<a>Login</a>
+</div>
+</nav>
 
 
-      {/* HOW NUTRIWISE WAS BORN */}
-      <section className="about-story">
+{/* LOGO */}
 
-        <h2>How NutriWise Was Born</h2>
-
-        <p>
-          NutriWise was born from a simple yet powerful realization — while cancer
-          treatment focuses intensely on medicines and procedures, nutrition often
-          remains an overlooked pillar of healing.
-        </p>
-
-        <p>
-          For many patients, the journey through cancer treatment is not just about
-          battling the disease. It is also about navigating fatigue, loss of appetite,
-          weakness, emotional stress, and the constant uncertainty that accompanies
-          every stage of treatment.
-        </p>
-
-        <p>
-          During this time, food becomes more than nourishment — it becomes strength,
-          comfort, and sometimes the very thing that helps patients continue their
-          fight.
-        </p>
-
-        <p>
-          NutriWise was created with the belief that no patient should feel alone
-          while navigating these challenges. Through compassionate oncology
-          nutrition guidance, emotional encouragement, and practical support,
-          NutriWise aims to stand beside patients and their families throughout
-          their journey.
-        </p>
-
-        <p>
-          Because healing is not just about treatment.  
-          Healing is about care, strength, and support.
-        </p>
-
-      </section>
+<div className="logoWrap">
+<img src="/Logo.png" alt="NutriWise" className="logo"/>
+</div>
 
 
 
-      {/* FOUNDER MESSAGE */}
-      <section className="founder-section">
+{/* HOW NUTRIWISE WAS BORN */}
 
-        <div className="founder-image">
-          <Image
-            src="/founder.png"
-            alt="Founder"
-            width={220}
-            height={220}
-            className="founder-photo"
-          />
-        </div>
+<section className="section">
 
-        <div className="founder-message">
+<h2>How NutriWise Was Born</h2>
 
-          <h2>Founder’s Message</h2>
+<p>
+NutriWise was born from witnessing something deeply human that often
+goes unnoticed during cancer treatment journeys. While medical teams
+work tirelessly to treat the disease, many patients quietly struggle
+with fatigue, appetite loss, weakness and confusion about what they
+should eat during treatment.
+</p>
 
-          <p>
-            NutriWise was created with a deep sense of empathy for individuals
-            navigating the difficult journey of cancer treatment.
-          </p>
+<p>
+Families often search for answers while trying to support their loved
+ones. Simple questions about food, strength and recovery can become
+overwhelming when reliable guidance is missing.
+</p>
 
-          <p>
-            During this time, patients and their families face not only medical
-            challenges but also emotional and physical struggles that can feel
-            overwhelming.
-          </p>
+<p>
+NutriWise was created to bring clarity, compassion and structured
+oncology nutrition guidance into that space. The goal is simple —
+to ensure that patients feel supported, informed and stronger during
+their treatment journey.
+</p>
 
-          <p>
-            Nutrition plays an important role in supporting strength, recovery,
-            and overall wellbeing during treatment, yet many patients struggle
-            to find guidance that is both medically informed and compassionate.
-          </p>
+<p>
+At its heart, NutriWise exists to remind patients that nourishment is
+not just about food — it is about strength, dignity and hope.
+</p>
 
-          <p>
-            Through NutriWise, our goal is to provide supportive, thoughtful
-            nutrition guidance that respects each patient’s unique journey.
-          </p>
-
-          <p>
-            We hope NutriWise becomes a space where patients feel supported,
-            understood, and empowered — one step at a time.
-          </p>
-
-        </div>
-
-      </section>
+</section>
 
 
 
-      {/* MISSION + VISION */}
-      <section className="mission-vision">
+{/* FOUNDER MESSAGE */}
 
-        <div className="card">
+<section className="section founder">
 
-          <div className="card-inner">
+<img src="/founder.jpg" className="founderImg"/>
 
-            <div className="card-front">
-              <h3>Our Mission</h3>
-            </div>
+<div>
 
-            <div className="card-back">
-              <p>
-                Our mission is to provide compassionate oncology nutrition
-                support that helps cancer patients maintain strength,
-                improve quality of life, and navigate treatment with
-                greater confidence and comfort.
-              </p>
-            </div>
+<h2>Message from the Founder</h2>
 
-          </div>
+<p>
+Cancer treatment is not only a medical journey — it is an emotional
+and deeply personal experience for patients and families.
+</p>
 
-        </div>
+<p>
+Through the years I have seen how bravely patients endure treatment
+while quietly struggling with fatigue, appetite loss and uncertainty
+about how to nourish their bodies.
+</p>
+
+<p>
+NutriWise was created with the hope that no patient should feel
+alone when it comes to understanding nutrition during treatment.
+Our goal is to provide guidance that is compassionate, structured
+and rooted in evidence-based oncology nutrition.
+</p>
+
+<p>
+Every patient deserves support, dignity and care throughout their
+healing journey.
+</p>
+
+<strong>— Manali Chandan</strong>
+
+</div>
+
+</section>
 
 
-        <div className="card">
 
-          <div className="card-inner">
+{/* MISSION AND VISION */}
 
-            <div className="card-front">
-              <h3>Our Vision</h3>
-            </div>
+<section className="section">
 
-            <div className="card-back">
-              <p>
-                Our vision is to create a supportive platform where every
-                cancer patient has access to trusted nutrition guidance,
-                emotional encouragement, and care that extends beyond
-                treatment.
-              </p>
-            </div>
+<h2>Our Mission & Vision</h2>
 
-          </div>
+<div className="missionGrid">
 
-        </div>
+<div className="missionCard">
+<h3>Our Mission</h3>
 
-      </section>
+<p>
+Our mission is to provide compassionate oncology nutrition guidance
+that supports patients during every stage of cancer treatment.
+</p>
 
-    </main>
-  );
+</div>
+
+<div className="missionCard">
+
+<h3>Our Vision</h3>
+
+<p>
+Our vision is to make oncology nutrition an essential part of cancer
+care so patients everywhere have access to nutritional support that
+strengthens their body and improves quality of life.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+{/* FOOTER */}
+
+<footer className="footer">
+
+<img src="/lotus.png" className="lotus"/>
+
+<p>
+NutriWise – Supporting patients with compassionate oncology nutrition
+guidance
+</p>
+
+</footer>
+
+
+
+{/* FLOATERS */}
+
+<div className="floater">
+
+<a href="https://wa.me/918320867088" target="_blank"><FaWhatsapp/></a>
+
+<a href="https://instagram.com/nutriwise_26" target="_blank"><FaInstagram/></a>
+
+<a href="https://linkedin.com/company/nutriwise26" target="_blank"><FaLinkedin/></a>
+
+<a href="https://youtube.com/@NutriWise_26" target="_blank"><FaYoutube/></a>
+
+<a href="https://x.com/NutriWise26" target="_blank"><FaXTwitter/></a>
+
+<a href="mailto:join.nutriwise@outlook.com"><MdEmail/></a>
+
+</div>
+
+
+
+<style jsx>{`
+
+.page{
+font-family:Poppins;
+padding:30px;
+
+background:linear-gradient(
+180deg,
+#fff7fb 0%,
+#f6efff 40%,
+#efe9ff 70%,
+#fdf4ff 100%
+);
+
+color:#5b3dbf;
+}
+
+.page::before{
+content:"";
+position:fixed;
+top:-200px;
+right:-200px;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(210,170,255,0.35),transparent);
+filter:blur(80px);
+z-index:-1;
+}
+
+.page::after{
+content:"";
+position:fixed;
+bottom:-200px;
+left:-200px;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(255,180,220,0.35),transparent);
+filter:blur(80px);
+z-index:-1;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+}
+
+.navLinks{
+display:flex;
+gap:28px;
+font-weight:500;
+}
+
+.logoWrap{
+display:flex;
+justify-content:center;
+margin-top:5px;
+margin-bottom:25px;
+position:relative;
+}
+
+.logo{
+width:300px;
+filter:drop-shadow(0 0 40px rgba(180,120,255,0.6));
+}
+
+.section{
+max-width:1000px;
+margin:80px auto;
+line-height:1.8;
+}
+
+.founder{
+display:grid;
+grid-template-columns:250px 1fr;
+gap:40px;
+align-items:center;
+}
+
+.founderImg{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.missionGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:30px;
+}
+
+.missionCard{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.footer{
+margin-top:80px;
+text-align:center;
+padding:50px;
+background:linear-gradient(180deg,#d7c4ff,#b79aff);
+border-radius:25px;
+}
+
+.lotus{
+width:70px;
+margin-bottom:10px;
+filter:drop-shadow(0 0 25px rgba(180,120,255,0.6));
+}
+
+.floater{
+position:fixed;
+right:20px;
+top:40%;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.floater a{
+background:#5b34d6;
+color:white;
+padding:12px;
+border-radius:50%;
+font-size:20px;
+}
+
+`}</style>
+
+</main>
+
+)
 }
