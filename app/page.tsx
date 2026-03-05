@@ -1,36 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaLeaf, FaHandsHelping } from "react-icons/fa";
 import { MdHealthAndSafety } from "react-icons/md";
 
-export default function Home() {
-
-const [policy,setPolicy] = useState("");
+export default function Home(){
 
 const testimonials = [
 {name:"Priya Mehta",city:"Mumbai",text:"Nutrition guidance helped me regain strength during chemotherapy."},
-{name:"Ramesh Shah",city:"Delhi",text:"I maintained energy levels through treatment thanks to proper nutrition."},
-{name:"Anjali Iyer",city:"Chennai",text:"Small dietary changes made treatment days easier."},
-{name:"Arjun Nair",city:"Bangalore",text:"The support gave me clarity and strength."},
-{name:"Kavita Desai",city:"Ahmedabad",text:"My recovery improved with proper nutrition planning."},
-{name:"Neha Kapoor",city:"Delhi",text:"Simple food adjustments made a big difference."},
-{name:"Sanjay Patel",city:"Surat",text:"I learned how nutrition supports healing."},
-{name:"Ritu Sharma",city:"Jaipur",text:"Supportive and compassionate guidance."},
-{name:"Manoj Verma",city:"Lucknow",text:"My strength improved gradually."},
-{name:"Deepa Nair",city:"Kochi",text:"Helped me manage appetite loss."},
-{name:"Rahul Gupta",city:"Indore",text:"Nutrition became a pillar of my recovery."},
-{name:"Sneha Joshi",city:"Pune",text:"Clear and compassionate guidance."},
+{name:"Ramesh Shah",city:"Delhi",text:"Nutrition support helped me maintain my energy levels during treatment."},
+{name:"Anjali Iyer",city:"Chennai",text:"Small dietary changes made my treatment days easier."},
+{name:"Arjun Nair",city:"Bangalore",text:"Nutrition support helped me slowly regain strength."},
+{name:"Kavita Desai",city:"Ahmedabad",text:"Food guidance helped me tolerate treatment better."},
+{name:"Sneha Joshi",city:"Pune",text:"Compassionate and supportive nutritional guidance."}
 ];
+
+const [index,setIndex] = useState(0);
+
+useEffect(()=>{
+const timer=setInterval(()=>{
+setIndex((prev)=>(prev+1)%testimonials.length)
+},3000);
+return ()=>clearInterval(timer)
+},[]);
 
 return(
 
 <main className="page">
 
-{/* NAVIGATION */}
+{/* NAV */}
 
 <nav className="nav">
 
@@ -45,7 +46,7 @@ return(
 
 {/* LOGO */}
 
-<div className="logoSection">
+<div className="logoWrap">
 
 <img src="/logo.png" className="logo"/>
 
@@ -59,8 +60,8 @@ return(
 <h1>Medicine treats cancer, but nutrition strengthens your body</h1>
 
 <p>
-Compassionate oncology nutrition guidance supporting patients through strength,
-healing and recovery during the cancer journey.
+Compassionate oncology nutrition guidance supporting strength, healing
+and dignity throughout the cancer journey.
 </p>
 
 </section>
@@ -74,16 +75,15 @@ healing and recovery during the cancer journey.
 
 <p>
 Cancer treatment places immense stress on the body. Chemotherapy,
-radiation therapy and surgeries often cause fatigue, nausea,
-appetite loss and muscle weakness. Proper nutrition helps the body
-maintain strength, preserve muscle mass and support the immune system.
+radiation therapy and surgeries often bring side effects like
+fatigue, nausea, appetite loss and muscle weakness.
 </p>
 
 <p>
-Oncology nutrition helps patients tolerate treatment better,
-recover faster and maintain quality of life during therapy.
-NutriWise focuses on compassionate, evidence-based nutritional
-guidance designed specifically for patients undergoing cancer treatment.
+Proper oncology nutrition helps maintain strength, support immune
+function and improve tolerance to treatment. NutriWise focuses on
+compassionate, evidence-based nutrition guidance that supports
+patients through recovery and healing.
 </p>
 
 </section>
@@ -98,27 +98,21 @@ guidance designed specifically for patients undergoing cancer treatment.
 <div className="cards">
 
 <div className="card">
-
-<FaLeaf size={45}/>
+<FaLeaf size={42}/>
 <h3>Personalized Oncology Nutrition</h3>
-<p>Diet plans tailored to cancer type, treatment stage and individual needs.</p>
-
+<p>Nutrition plans tailored to cancer type and treatment stage.</p>
 </div>
 
 <div className="card">
-
-<MdHealthAndSafety size={45}/>
+<MdHealthAndSafety size={42}/>
 <h3>Managing Treatment Side Effects</h3>
-<p>Nutrition strategies for nausea, fatigue, appetite loss and recovery.</p>
-
+<p>Guidance to support nausea, fatigue and appetite loss.</p>
 </div>
 
 <div className="card">
-
-<FaHandsHelping size={45}/>
+<FaHandsHelping size={42}/>
 <h3>Continuous Support</h3>
-<p>Ongoing guidance helping patients stay strong during treatment.</p>
-
+<p>Compassionate nutrition guidance through treatment.</p>
 </div>
 
 </div>
@@ -126,18 +120,23 @@ guidance designed specifically for patients undergoing cancer treatment.
 </section>
 
 
-{/* PATIENT EXPERIENCES */}
+{/* TESTIMONIALS */}
 
 <section className="section">
 
 <h2>Patient Experiences</h2>
 
-<div className="slider">
+<div className="testimonialRow">
 
-{testimonials.map((t,i)=>(
-<div key={i} className="testimonial">
+{[0,1,2].map((i)=>{
 
-<img src={`https://randomuser.me/api/portraits/${i%2===0?"women":"men"}/${30+i}.jpg`} />
+const t=testimonials[(index+i)%testimonials.length];
+
+return(
+
+<div className="testimonial" key={i}>
+
+<img src={`https://randomuser.me/api/portraits/${i%2?"women":"men"}/${40+i}.jpg`} />
 
 <p>"{t.text}"</p>
 
@@ -146,39 +145,60 @@ guidance designed specifically for patients undergoing cancer treatment.
 <span>{t.city}</span>
 
 </div>
-))}
+
+)
+
+})}
 
 </div>
 
 </section>
 
 
-{/* SUPPORT PATIENT */}
+{/* SUPPORT */}
 
 <section className="section support">
 
 <h2>Support a Patient</h2>
 
 <p>
-Cancer journeys can be overwhelming for many families.
-Your support can help provide nutritional care to patients
-who may otherwise struggle to access guidance.
+Cancer journeys can be overwhelming. Your support can help provide
+nutrition guidance to patients who may not otherwise access care.
 </p>
 
-<button className="supportBtn">Support Now</button>
+<button className="supportBtn">
+Support Now
+</button>
 
-<p className="counter">Patients Supported: 124</p>
+<p className="counter">
+Patients Supported: 124
+</p>
 
 </section>
 
 
-{/* SOCIAL */}
+{/* FOOTER */}
 
-<section className="section social">
+<footer className="footer">
 
-<h2>You Can Find Us At</h2>
+<img src="/lotus.jpeg" className="lotus"/>
 
-<div className="icons">
+<div className="policies">
+
+<button>Privacy Policy</button>
+
+<button>Refund Policy</button>
+
+<button>Legal Disclaimer</button>
+
+</div>
+
+</footer>
+
+
+{/* FLOATING SOCIAL */}
+
+<div className="floater">
 
 <a href="https://wa.me/918320867088" target="_blank"><FaWhatsapp/></a>
 
@@ -194,63 +214,6 @@ who may otherwise struggle to access guidance.
 
 </div>
 
-</section>
-
-
-{/* FOOTER */}
-
-<footer className="footer">
-
-<img src="/lotus.jpeg" className="lotus"/>
-
-<div className="policies">
-
-<button onClick={()=>setPolicy("privacy")}>Privacy Policy</button>
-
-<button onClick={()=>setPolicy("refund")}>Refund Policy</button>
-
-<button onClick={()=>setPolicy("legal")}>Legal Disclaimer</button>
-
-</div>
-
-</footer>
-
-
-{/* POLICY POPUP */}
-
-{policy && (
-
-<div className="modal">
-
-<div className="modalBox">
-
-<button onClick={()=>setPolicy("")}>Close</button>
-
-<p>
-
-{policy==="privacy" && "We respect patient privacy and do not share personal health information."}
-
-{policy==="refund" && "Consultation fees once paid are non refundable unless service is cancelled."}
-
-{policy==="legal" && "NutriWise provides nutritional guidance and does not replace medical treatment."}
-
-</p>
-
-</div>
-
-</div>
-
-)}
-
-
-{/* WHATSAPP FLOATER */}
-
-<a href="https://wa.me/918320867088" target="_blank" className="whatsappFloat">
-
-<FaWhatsapp/>
-
-</a>
-
 
 <style jsx>{`
 
@@ -258,21 +221,23 @@ who may otherwise struggle to access guidance.
 background:linear-gradient(180deg,#f8edff,#fde2f3);
 font-family:Poppins;
 padding:40px;
+color:#333;
 }
 
 .nav{
 display:flex;
 justify-content:flex-end;
 gap:30px;
+font-weight:500;
 }
 
-.logoSection{
+.logoWrap{
 text-align:center;
-margin:30px 0;
+margin:40px 0;
 }
 
 .logo{
-height:110px;
+height:120px;
 }
 
 .hero{
@@ -286,6 +251,10 @@ max-width:1000px;
 margin:80px auto;
 }
 
+.section h2{
+color:#4A2C6D;
+}
+
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -295,23 +264,23 @@ gap:30px;
 .card{
 background:white;
 padding:30px;
-border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,0.08);
+border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 text-align:center;
 }
 
-.slider{
+.testimonialRow{
 display:flex;
 gap:25px;
-overflow-x:auto;
 }
 
 .testimonial{
-min-width:250px;
 background:white;
 padding:20px;
 border-radius:15px;
+width:280px;
 text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
 
 .testimonial img{
@@ -326,19 +295,12 @@ text-align:center;
 
 .supportBtn{
 background:#c79cff;
-padding:14px 28px;
 border:none;
+padding:14px 28px;
 border-radius:25px;
 color:white;
 font-weight:600;
 cursor:pointer;
-}
-
-.icons{
-display:flex;
-justify-content:center;
-gap:25px;
-font-size:30px;
 }
 
 .footer{
@@ -354,34 +316,21 @@ height:60px;
 margin:10px;
 }
 
-.whatsappFloat{
+.floater{
 position:fixed;
-bottom:30px;
-right:30px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:28px;
-}
-
-.modal{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.4);
+right:20px;
+top:40%;
 display:flex;
-align-items:center;
-justify-content:center;
+flex-direction:column;
+gap:15px;
+font-size:26px;
 }
 
-.modalBox{
+.floater a{
 background:white;
-padding:40px;
-border-radius:15px;
-max-width:500px;
+padding:10px;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 
 `}</style>
