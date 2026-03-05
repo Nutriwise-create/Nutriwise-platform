@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 
 import { FaLeaf, FaHandsHelping, FaHeart } from "react-icons/fa"
 import { MdHealthAndSafety, MdEmail } from "react-icons/md"
@@ -57,11 +58,11 @@ return(
 
 <div className="navLinks">
 
-<a href="/about">About Us</a>
-<a>Our Nutritionists</a>
-<a>Stories of Strength</a>
-<a>Book Consultation</a>
-<a>Login</a>
+<Link href="/about">About Us</Link>
+<Link href="/nutritionists">Our Nutritionists</Link>
+<Link href="/stories">Stories of Strength</Link>
+<Link href="/consultation">Book Consultation</Link>
+<Link href="/login">Login</Link>
 
 </div>
 
