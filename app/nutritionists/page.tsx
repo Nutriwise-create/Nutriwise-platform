@@ -71,10 +71,6 @@ Compassionate professionals dedicated to supporting patients through evidence-ba
 Chemotherapy Nutrition • Gut Recovery • Strength Building
 </p>
 
-<Link href="/consultation">
-<button>Book Consultation</button>
-</Link>
-
 </div>
 
 
@@ -95,10 +91,6 @@ Specializes in nutrition planning during radiation therapy and treatment recover
 Radiation Nutrition • Weight Management • Immune Support
 </p>
 
-<Link href="/consultation">
-<button>Book Consultation</button>
-</Link>
-
 </div>
 
 
@@ -118,10 +110,6 @@ Focused on post-treatment recovery and long-term strength rebuilding through nut
 <p className="tags">
 Recovery Nutrition • Muscle Strength • Energy Restoration
 </p>
-
-<Link href="/consultation">
-<button>Book Consultation</button>
-</Link>
 
 </div>
 
@@ -199,7 +187,6 @@ NutriWise – Supporting patients with compassionate oncology nutrition guidance
 <style jsx>{`
 
 .page{
-
 font-family:Poppins;
 padding:40px;
 
@@ -212,12 +199,7 @@ background:linear-gradient(
 );
 
 color:#4a3ca6;
-
 }
-
-
-
-/* NAVBAR */
 
 .nav{
 display:flex;
@@ -231,10 +213,6 @@ gap:28px;
 font-weight:500;
 }
 
-
-
-/* LOGO */
-
 .logoWrap{
 display:flex;
 justify-content:center;
@@ -246,60 +224,34 @@ width:280px;
 filter:drop-shadow(0 0 30px rgba(180,120,255,0.6));
 }
 
-
-
-/* HEADER */
-
 .header{
 text-align:center;
 max-width:800px;
 margin:60px auto;
 }
 
-.header p{
-margin-top:15px;
-}
-
-
-
-/* CARDS */
-
 .cards{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:40px;
 max-width:1000px;
 margin:80px auto;
-
 }
 
 .card{
-
 background:white;
 padding:30px;
 border-radius:20px;
 text-align:center;
-
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-
-transition:transform .3s;
-
-}
-
-.card:hover{
-transform:translateY(-8px);
 }
 
 .card img{
-
 width:120px;
 height:120px;
 border-radius:50%;
 object-fit:cover;
-
 margin-bottom:15px;
-
 }
 
 .title{
@@ -309,26 +261,7 @@ margin-bottom:10px;
 
 .tags{
 font-size:14px;
-margin-bottom:20px;
 }
-
-button{
-
-background:#6d4df5;
-color:white;
-
-padding:10px 20px;
-
-border:none;
-border-radius:25px;
-
-cursor:pointer;
-
-}
-
-
-
-/* TRUST */
 
 .trust{
 text-align:center;
@@ -343,17 +276,11 @@ gap:20px;
 margin-top:30px;
 }
 
-
-
-/* FOOTER */
-
 .footer{
 margin-top:100px;
 padding:50px;
 text-align:center;
-
 background:linear-gradient(180deg,#d8c8ff,#b9a2ff);
-
 border-radius:25px;
 }
 
@@ -362,10 +289,6 @@ width:70px;
 margin-bottom:10px;
 }
 
-
-
-/* FLOATERS */
-
 .floaters{
 position:fixed;
 right:20px;
@@ -373,7 +296,6 @@ top:40%;
 display:flex;
 flex-direction:column;
 gap:16px;
-z-index:1000;
 }
 
 .floaters a{
@@ -391,7 +313,6 @@ width:22px;
 height:22px;
 filter:brightness(0) invert(1);
 }
-
 
 `}</style>
 
