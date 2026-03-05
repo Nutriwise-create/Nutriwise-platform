@@ -78,8 +78,9 @@ return(
 <h1>Book a Consultation</h1>
 
 <p>
-Speak with our oncology nutrition team and receive compassionate guidance
-to support you during your treatment journey.
+Every cancer journey is deeply personal.
+Our oncology nutrition team is here to listen, guide and support you
+with compassion, care and understanding.
 </p>
 
 </section>
@@ -118,7 +119,6 @@ onChange={handleChange}
 </select>
 
 
-
 <input
 name="email"
 type="email"
@@ -134,12 +134,10 @@ onChange={handleChange}
 <div className="phone">
 
 <select name="countryCode" onChange={handleChange}>
-
 <option value="+91">🇮🇳 +91</option>
 <option value="+1">🇺🇸 +1</option>
 <option value="+44">🇬🇧 +44</option>
 <option value="+61">🇦🇺 +61</option>
-
 </select>
 
 <input
@@ -154,10 +152,12 @@ onChange={handleChange}
 
 
 <p className="note">
-We understand that every cancer journey is deeply personal.
-Our team is here to support you with compassion and care.
-Your time and privacy matter to us, and we will only reach out
-regarding your consultation request — never with unwanted calls.
+
+We understand that reaching out during a health journey can take courage.
+Please know that you are not alone.  
+Our team is here to support you with kindness, patience and respect for
+your time and space.
+
 </p>
 
 
