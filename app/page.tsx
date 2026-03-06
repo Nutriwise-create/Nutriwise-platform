@@ -29,13 +29,11 @@ return(
 </nav>
 
 
-
 {/* LOGO */}
 
 <div className="logoWrap">
 <img src="/Logo.png" className="logo"/>
 </div>
-
 
 
 {/* HERO */}
@@ -52,7 +50,6 @@ patients during treatment, recovery and healing.
 </section>
 
 
-
 {/* WHY NUTRITION */}
 
 <section className="nutrition">
@@ -60,9 +57,9 @@ patients during treatment, recovery and healing.
 <h2>Why Right Nutrition Matters</h2>
 
 <p>
-Cancer treatment places enormous stress on the body.
-Chemotherapy, radiation therapy and surgeries often affect appetite,
-digestion, immunity and overall strength.
+Cancer treatment places enormous stress on the body. Chemotherapy,
+radiation therapy and surgeries often affect appetite, digestion,
+immunity and overall strength.
 </p>
 
 <p>
@@ -73,8 +70,9 @@ supports immunity and improves tolerance to treatment.
 </p>
 
 <p>
-Nutrition does not replace medical treatment.
-It strengthens the body so treatment can work more effectively.
+Nutrition does not replace medical treatment. It strengthens the body
+so treatment can work more effectively and helps patients maintain
+quality of life during the healing journey.
 </p>
 
 </section>
@@ -130,44 +128,50 @@ and recovery.
 
 <div className="scroll">
 
+{/* row duplicated for continuous scroll */}
+
 <div className="card">
 <img src="https://randomuser.me/api/portraits/women/65.jpg"/>
 <h4>Kavita Sharma</h4>
 <p>Mumbai</p>
-<p>
-The nutrition guidance helped me regain strength
-during chemotherapy.
-</p>
+<p>The nutrition guidance helped me regain strength during chemotherapy.</p>
 </div>
 
 <div className="card">
 <img src="https://randomuser.me/api/portraits/men/45.jpg"/>
 <h4>Anil Patel</h4>
 <p>Ahmedabad</p>
-<p>
-Small nutritional changes made treatment
-much easier to handle.
-</p>
+<p>Small nutritional changes made treatment much easier to handle.</p>
 </div>
 
 <div className="card">
 <img src="https://randomuser.me/api/portraits/women/50.jpg"/>
 <h4>Sneha Joshi</h4>
 <p>Bangalore</p>
-<p>
-I felt supported and guided throughout
-my recovery journey.
-</p>
+<p>I felt supported and guided throughout my recovery journey.</p>
 </div>
 
 <div className="card">
 <img src="https://randomuser.me/api/portraits/men/40.jpg"/>
 <h4>Rahul Shah</h4>
 <p>Delhi</p>
-<p>
-The diet guidance helped me maintain
-energy levels during treatment.
-</p>
+<p>The diet guidance helped me maintain energy levels during treatment.</p>
+</div>
+
+{/* duplicated cards */}
+
+<div className="card">
+<img src="https://randomuser.me/api/portraits/women/65.jpg"/>
+<h4>Kavita Sharma</h4>
+<p>Mumbai</p>
+<p>The nutrition guidance helped me regain strength during chemotherapy.</p>
+</div>
+
+<div className="card">
+<img src="https://randomuser.me/api/portraits/men/45.jpg"/>
+<h4>Anil Patel</h4>
+<p>Ahmedabad</p>
+<p>Small nutritional changes made treatment much easier to handle.</p>
 </div>
 
 </div>
@@ -180,7 +184,7 @@ energy levels during treatment.
 
 <section className="support">
 
-<h2>❤️ Support a Patient</h2>
+<h2>💜 Support a Patient 💜</h2>
 
 <p>
 Many patients undergoing cancer treatment struggle
@@ -215,8 +219,8 @@ guidance they deserve during a difficult journey.
 </div>
 
 <p>
-NutriWise is committed to supporting cancer patients
-through compassionate oncology nutrition guidance.
+NutriWise is committed to supporting cancer patients through
+compassionate oncology nutrition guidance and education.
 </p>
 
 </footer>
@@ -235,29 +239,31 @@ through compassionate oncology nutrition guidance.
 
 {policy==="privacy" && (
 <p>
-We respect your privacy and protect all personal
-information shared with NutriWise.
-Your data is used only to provide consultation
-and support services.
+We respect your privacy and protect all personal information
+shared with NutriWise. Any data collected such as name,
+contact details or health information is used strictly to
+provide consultation and nutritional support services.
+Your information will never be sold or shared with third
+parties without consent.
 </p>
 )}
 
 {policy==="refund" && (
 <p>
-Refund requests raised within 10 days of payment
-are eligible for a full refund provided the
-consultation services have not been fully used.
-NutriWise reserves the right to review refund
-requests to prevent misuse.
+Refund requests raised within 10 days of payment are eligible
+for a full refund provided consultation services have not been
+completed. NutriWise reserves the right to review refund
+requests in cases of repeated or suspicious refund activity
+to prevent misuse of services.
 </p>
 )}
 
 {policy==="legal" && (
 <p>
-NutriWise provides nutrition guidance for
-supportive care during cancer treatment.
-Our services do not replace medical advice
-from oncologists or healthcare providers.
+NutriWise provides nutritional guidance intended to support
+patients undergoing cancer treatment. Our services do not
+replace medical advice, diagnosis or treatment provided by
+oncologists or licensed healthcare professionals.
 </p>
 )}
 
@@ -273,20 +279,20 @@ from oncologists or healthcare providers.
 
 <div className="floaters">
 
-<a href="https://wa.me/918320867088" target="_blank">
+<a href="https://wa.me/918320867088" target="_blank" rel="noopener noreferrer">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"/>
 </a>
 
 <a href="https://instagram.com/nutriwise_26" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"/>
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"/>
 </a>
 
 <a href="https://linkedin.com" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733561.png"/>
+<img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"/>
 </a>
 
 <a href="https://youtube.com" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733646.png"/>
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"/>
 </a>
 
 <a href="https://x.com" target="_blank">
@@ -294,7 +300,7 @@ from oncologists or healthcare providers.
 </a>
 
 <a href="mailto:join.nutriwise@outlook.com" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"/>
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"/>
 </a>
 
 </div>
@@ -306,15 +312,7 @@ from oncologists or healthcare providers.
 .page{
 font-family:Poppins;
 padding:40px;
-
-background:linear-gradient(
-180deg,
-#fff7fb,
-#f3ecff,
-#efe8ff,
-#fdf4ff
-);
-
+background:linear-gradient(180deg,#fff7fb,#f3ecff,#efe8ff,#fdf4ff);
 color:#4a3ca6;
 }
 
@@ -389,8 +387,14 @@ text-align:center;
 .scroll{
 display:flex;
 gap:20px;
-overflow:auto;
+overflow:hidden;
 padding:20px;
+animation:scroll 35s linear infinite;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
 }
 
 .card{
