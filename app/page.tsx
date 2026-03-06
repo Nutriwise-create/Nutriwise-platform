@@ -319,15 +319,15 @@ through the platform.
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"/>
 </a>
 
-<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+<a href="https://www.linkedin.com/company/nutriwise26/" target="_blank" rel="noopener noreferrer">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"/>
 </a>
 
-<a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+<a href="https://www.youtube.com/@NutriWise_26" target="_blank" rel="noopener noreferrer">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"/>
 </a>
 
-<a href="https://x.com" target="_blank" rel="noopener noreferrer">
+<a href="https://x.com/NutriWise26" target="_blank" rel="noopener noreferrer">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg"/>
 </a>
 
