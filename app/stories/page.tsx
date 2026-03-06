@@ -62,13 +62,28 @@ of life.
 
 <div className="story">
 
-{
-name:"Yuvraj Singh",
-role:"Cricket Champion • Lung Cancer Survivor",
-img:"https://upload.wikimedia.org/wikipedia/commons/2/23/Yuvraj_Singh_2011.jpg",
-text:"Champions are not made only on the field. After the 2011 Cricket World Cup, Yuvraj Singh was diagnosed with a rare form of cancer. Chemotherapy left him exhausted and far from the sport he loved. But he refused to surrender. With courage, discipline and hope, he returned stronger and later created the YouWeCan foundation to support thousands of patients across India.",
-tag:"Cancer may challenge your body, but it cannot defeat your spirit."
-},
+<img src="https://randomuser.me/api/portraits/women/44.jpg"/>
+
+<div>
+
+<h3>Hina Khan</h3>
+
+<p className="subtitle">Actor • Story of Courage</p>
+
+<p>
+Hina Khan has spoken openly about her health challenges,
+showing the world that vulnerability and strength can
+coexist. Her courage inspired thousands of people who
+were silently fighting their own battles.
+</p>
+
+<div className="timeline">
+
+<span>Diagnosis</span>
+<div className="line"></div>
+<span>Treatment</span>
+<div className="line"></div>
+<span>Recovery</span>
 
 </div>
 
