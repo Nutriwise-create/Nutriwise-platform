@@ -239,31 +239,63 @@ compassionate oncology nutrition guidance and education.
 
 {policy==="privacy" && (
 <p>
-We respect your privacy and protect all personal information
-shared with NutriWise. Any data collected such as name,
-contact details or health information is used strictly to
-provide consultation and nutritional support services.
-Your information will never be sold or shared with third
-parties without consent.
+NutriWise respects and protects the privacy of all individuals
+who interact with our platform. Any personal information shared
+with NutriWise including name, contact details, medical
+information or consultation requests is used strictly for the
+purpose of providing nutritional consultation and support
+services.
+
+NutriWise does not sell, rent or distribute personal data to
+third parties. Information may only be used internally for
+consultation coordination, service improvement or compliance
+with applicable regulations.
+
+All reasonable security measures are implemented to protect
+user data. By using this platform you consent to the collection
+and use of information in accordance with this privacy policy.
 </p>
 )}
 
 {policy==="refund" && (
 <p>
-Refund requests raised within 10 days of payment are eligible
-for a full refund provided consultation services have not been
-completed. NutriWise reserves the right to review refund
-requests in cases of repeated or suspicious refund activity
-to prevent misuse of services.
+NutriWise aims to provide transparent and fair service policies.
+
+Refund requests may be considered if submitted within
+10 calendar days from the date of payment, provided that
+consultation services have not already been completed or
+substantially delivered.
+
+Refund requests will be reviewed by the NutriWise team to
+prevent misuse of services. If consultation has already been
+provided, scheduled sessions have been attended, or customized
+nutrition plans have been delivered, refunds may not be
+eligible.
+
+Approved refunds will be processed through the original payment
+method within a reasonable processing period.
+
+NutriWise reserves the right to decline refund requests that do
+not meet the stated conditions.
 </p>
 )}
 
 {policy==="legal" && (
 <p>
-NutriWise provides nutritional guidance intended to support
-patients undergoing cancer treatment. Our services do not
-replace medical advice, diagnosis or treatment provided by
-oncologists or licensed healthcare professionals.
+NutriWise provides evidence-based nutritional guidance intended
+to support individuals undergoing cancer treatment or recovery.
+
+The information and consultation services provided by NutriWise
+are for supportive care purposes only and do not replace medical
+diagnosis, treatment or professional advice provided by
+oncologists, physicians or licensed healthcare providers.
+
+Patients should always follow the guidance of their treating
+medical professionals regarding treatment decisions.
+
+NutriWise shall not be held liable for medical outcomes resulting
+from the use or interpretation of nutritional guidance provided
+through the platform.
 </p>
 )}
 
@@ -385,10 +417,14 @@ text-align:center;
 
 .scroll{
 display:flex;
-gap:20px;
-overflow:hidden;
+gap:25px;
 padding:20px;
-animation:scroll 35s linear infinite;
+overflow-x:auto;
+scroll-behavior:smooth;
+}
+
+.scroll::-webkit-scrollbar{
+display:none;
 }
 
 @keyframes scroll{
@@ -397,7 +433,8 @@ animation:scroll 35s linear infinite;
 }
 
 .card{
-min-width:240px;
+min-width:260px;
+flex-shrink:0;
 background:white;
 padding:20px;
 border-radius:15px;
@@ -451,18 +488,25 @@ gap:16px;
 }
 
 .floaters a{
-background:#5e3ed6;
-width:46px;
-height:46px;
+background:linear-gradient(135deg,#7b5cff,#ff9bd2);
+width:48px;
+height:48px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
+box-shadow:0 6px 20px rgba(120,90,255,0.35);
+transition:0.3s;
+}
+
+.floaters a:hover{
+transform:scale(1.1);
 }
 
 .floaters img{
-width:22px;
-height:22px;
+width:20px;
+height:20px;
+filter:brightness(0) invert(1);
 }
 
 .popup{
