@@ -86,28 +86,28 @@ compassionate oncology nutrition guidance.
 
 <div className="floaters">
 
-<a href="https://wa.me/918320867088" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"/>
+<a href="https://wa.me/918320867088" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"/>
 </a>
 
-<a href="https://instagram.com/nutriwise_26" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"/>
+<a href="https://instagram.com/nutriwise_26" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"/>
 </a>
 
-<a href="https://linkedin.com" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733561.png"/>
+<a href="https://www.linkedin.com/company/nutriwise26/" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"/>
 </a>
 
-<a href="https://youtube.com" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733646.png"/>
+<a href="https://www.youtube.com/@NutriWise_26" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"/>
 </a>
 
-<a href="https://x.com" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png"/>
+<a href="https://x.com/NutriWise26" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg"/>
 </a>
 
-<a href="mailto:join.nutriwise@outlook.com" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"/>
+<a href="mailto:join.nutriwise@outlook.com" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"/>
 </a>
 
 </div>
@@ -256,18 +256,24 @@ gap:16px;
 }
 
 .floaters a{
-background:#5e3ed6;
-width:46px;
-height:46px;
+background:linear-gradient(135deg,#7b5cff,#ff9bd2);
+width:48px;
+height:48px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
+box-shadow:0 6px 20px rgba(120,90,255,0.35);
+transition:0.3s;
+}
+
+.floaters a:hover{
+transform:scale(1.1);
 }
 
 .floaters img{
-width:22px;
-height:22px;
+width:20px;
+height:20px;
 filter:brightness(0) invert(1);
 }
 
