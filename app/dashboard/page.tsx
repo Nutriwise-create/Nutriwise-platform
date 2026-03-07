@@ -1,89 +1,94 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 
 export default function Dashboard(){
-
-const [hover,setHover] = useState("")
 
 return(
 
 <main className="page">
 
+
 {/* NAVBAR */}
 
 <nav className="nav">
 
-<img src="/Logo.png" className="logo"/>
+<div></div>
 
 <div className="links">
 <Link href="/dashboard">Home</Link>
-<Link href="/profile">Profile</Link>
+<Link href="/dashboard/profile">Profile</Link>
 </div>
 
 </nav>
 
 
-{/* MOTIVATIONAL QUOTE */}
+{/* LOGO */}
+
+<div className="logoWrap">
+<img src="/Logo.png" className="logo"/>
+</div>
+
+
+{/* QUOTE */}
 
 <section className="quote">
 
 <p>
-You are stronger than you think.  
-Every day your body continues its quiet fight and healing.
+<strong><i>
+"Even on difficult days your strength is quietly working within you.
+Healing is not always visible — but it is happening."
+</i></strong>
 </p>
 
 </section>
 
 
-{/* CARE CUDDLE (TIP OF DAY) */}
+{/* CARE CUDDLE */}
 
 <section className="tip">
 
-<h3>Care Cuddle 🌿</h3>
+<h3>⚗️ Care Cuddle</h3>
 
 <p>
-Gentle nutrition tip of the day will appear here.
-Small supportive guidance that helps patients
-navigate treatment with comfort.
+A gentle nutrition nudge to support your body today.
+Small nourishment choices often make the biggest difference.
 </p>
 
 </section>
 
 
-{/* ANNOUNCEMENTS */}
+{/* ANNOUNCEMENT + ARTICLES */}
 
-<section className="announcement">
+<section className="infoSection">
+
+<div className="box">
 
 <h3>Announcements</h3>
 
-<div className="card">
-Upcoming webinars, support sessions and community
-events will appear here.
+<div className="scrollBox">
+
+<p>Upcoming webinar on nutrition during chemotherapy</p>
+<p>Online support group session this Sunday</p>
+<p>Nutrition awareness event by cancer support NGO</p>
+<p>Live Q&A with oncology nutrition expert</p>
+
 </div>
 
-</section>
+</div>
 
 
-{/* ARTICLES */}
-
-<section className="articles">
+<div className="box">
 
 <h3>Helpful Articles</h3>
 
-<div className="grid">
+<div className="scrollBox">
 
-<div className="card">
-Nutrition during chemotherapy
-</div>
+<p>Nutrition during chemotherapy</p>
+<p>Managing appetite loss during treatment</p>
+<p>Protein intake for recovery</p>
+<p>Foods that support healing</p>
 
-<div className="card">
-Managing appetite loss during treatment
-</div>
-
-<div className="card">
-Foods that support recovery
 </div>
 
 </div>
@@ -95,108 +100,96 @@ Foods that support recovery
 
 <section className="ngo">
 
-<button onClick={()=>window.open("/ngo","_blank")}>
-Connect to NGO Support
+<button onClick={()=>window.open("/dashboard/ngo","_blank")}>
+Click to Reach NGOs
 </button>
 
 </section>
 
 
-{/* LOCKED FEATURES */}
+
+{/* FEATURES GRID */}
 
 <section className="features">
 
-<div 
-className="feature locked"
-onMouseEnter={()=>setHover("medicine")}
-onMouseLeave={()=>setHover("")}
->
-💊 Medicine Tracker
+
+<div className="feature">
+
+<h3>What You Should Eat Next</h3>
+
+<p>
+Personalized diet suggestions based on treatment stage,
+nutritional needs and recovery support.
+</p>
+
 </div>
 
 
-<div 
-className="feature locked"
-onMouseEnter={()=>setHover("diet")}
-onMouseLeave={()=>setHover("")}
->
-🥗 Diet Chart
+<div className="feature">
+
+<h3>Nutrition Counter</h3>
+
+<p>
+Track daily calories, hydration, protein intake and
+important nutrients required for recovery.
+</p>
+
 </div>
 
 
-<div 
-className="feature locked"
-onMouseEnter={()=>setHover("recipe")}
-onMouseLeave={()=>setHover("")}
->
-🍲 Healing Recipes
+<div className="feature">
+
+<h3>Today's Healing Recipe Idea</h3>
+
+<p>
+Carefully designed recipes that are easy to digest,
+nutrient rich and supportive during treatment.
+</p>
+
 </div>
 
 
-<div 
-className="feature locked"
-onMouseEnter={()=>setHover("nutrition")}
-onMouseLeave={()=>setHover("")}
->
-👩‍⚕️ Message Nutritionist
+<div className="feature">
+
+<h3>Medicine Tracker</h3>
+
+<p>
+Track medicines, doses and schedules so treatment
+remains organized and consistent.
+</p>
+
 </div>
 
-
-<div 
-className="feature locked"
-onMouseEnter={()=>setHover("counter")}
-onMouseLeave={()=>setHover("")}
->
-📊 Nutrition Counter
-</div>
 
 </section>
 
 
-{/* FEATURE PREVIEW */}
 
-{hover && (
+{/* MESSAGE NUTRITIONIST */}
 
-<div className="preview">
+<section className="nutritionist">
 
-{hover==="medicine" && (
+<button>
+Message Your Nutritionist
+</button>
+
+</section>
+
+
+
+{/* LOTUS */}
+
+<footer className="footer">
+
+<img src="/lotus.png" className="lotus"/>
+
 <p>
-Track medicines, reminders and maintain
-a complete treatment record.
+NutriWise is dedicated to supporting cancer patients
+with compassionate nutritional guidance.
 </p>
-)}
 
-{hover==="diet" && (
-<p>
-Weekly personalized diet chart created by
-oncology nutritionists.
-</p>
-)}
+</footer>
 
-{hover==="recipe" && (
-<p>
-Healing recipes designed specifically for
-patients undergoing cancer treatment.
-</p>
-)}
-
-{hover==="nutrition" && (
-<p>
-Directly connect with your nutritionist
-for guidance and support.
-</p>
-)}
-
-{hover==="counter" && (
-<p>
-Track calories, protein and daily nutrition
-requirements.
-</p>
-)}
-
-</div>
-
-)}
 
 
 {/* WHATSAPP FLOATER */}
@@ -206,7 +199,7 @@ href="https://wa.me/918320867088"
 target="_blank"
 className="whatsapp"
 >
-💬
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"/>
 </a>
 
 
@@ -215,7 +208,7 @@ className="whatsapp"
 
 .page{
 font-family:Poppins;
-padding:30px;
+padding:40px;
 
 background:linear-gradient(
 180deg,
@@ -226,43 +219,54 @@ background:linear-gradient(
 );
 
 color:#4a3ca6;
-min-height:100vh;
 }
+
 
 
 .nav{
 display:flex;
 justify-content:space-between;
-align-items:center;
-margin-bottom:30px;
 }
 
-
-.logo{
-width:160px;
-}
 
 
 .links{
 display:flex;
-gap:20px;
+gap:25px;
 }
+
+
+
+.logoWrap{
+display:flex;
+justify-content:center;
+margin:30px 0;
+}
+
+
+
+.logo{
+width:220px;
+filter:drop-shadow(0 0 25px rgba(200,150,255,0.6));
+}
+
 
 
 .quote{
 text-align:center;
-font-size:18px;
-max-width:600px;
+max-width:650px;
 margin:auto;
 margin-bottom:40px;
+font-size:18px;
 }
+
 
 
 .tip{
 background:white;
 padding:20px;
 border-radius:15px;
-max-width:600px;
+max-width:650px;
 margin:auto;
 text-align:center;
 
@@ -270,41 +274,52 @@ box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
 
-.announcement{
-margin-top:50px;
-text-align:center;
-}
 
-
-.articles{
-margin-top:50px;
-text-align:center;
-}
-
-
-.grid{
+.infoSection{
 display:flex;
-gap:20px;
+gap:30px;
 justify-content:center;
+margin-top:50px;
 flex-wrap:wrap;
-margin-top:20px;
 }
 
 
-.card{
+
+.box{
 background:white;
 padding:20px;
 border-radius:15px;
-width:220px;
+width:300px;
 
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
+
+
+
+.scrollBox{
+height:120px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+gap:10px;
+
+animation:scrollUp 10s linear infinite;
+}
+
+
+
+@keyframes scrollUp{
+0%{transform:translateY(0)}
+100%{transform:translateY(-50%)}
+}
+
 
 
 .ngo{
 text-align:center;
 margin-top:40px;
 }
+
 
 
 .ngo button{
@@ -317,43 +332,57 @@ cursor:pointer;
 }
 
 
+
 .features{
 margin-top:60px;
 
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
+
 
 
 .feature{
 background:white;
-padding:20px;
+padding:25px;
 border-radius:15px;
-width:200px;
-text-align:center;
 
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
 
-.locked{
-opacity:0.7;
+
+.nutritionist{
+text-align:center;
+margin-top:50px;
+}
+
+
+
+.nutritionist button{
+background:#6d4df5;
+color:white;
+padding:14px 30px;
+border:none;
+border-radius:25px;
 cursor:pointer;
 }
 
 
-.preview{
-background:white;
-padding:15px;
-border-radius:10px;
-text-align:center;
-max-width:350px;
-margin:20px auto;
 
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+.footer{
+text-align:center;
+margin-top:80px;
 }
+
+
+
+.lotus{
+width:70px;
+margin-bottom:10px;
+}
+
 
 
 .whatsapp{
@@ -361,36 +390,40 @@ position:fixed;
 right:20px;
 bottom:30px;
 
-width:55px;
-height:55px;
+width:50px;
+height:50px;
 
 background:#25D366;
-
 border-radius:50%;
 
 display:flex;
 align-items:center;
 justify-content:center;
-
-color:white;
-font-size:24px;
 }
+
+
+
+.whatsapp img{
+width:24px;
+height:24px;
+filter:brightness(0) invert(1);
+}
+
 
 
 @media(max-width:768px){
 
-.grid{
-flex-direction:column;
-align-items:center;
-}
-
-.features{
-flex-direction:column;
-align-items:center;
+.page{
+padding:20px;
 }
 
 .logo{
-width:120px;
+width:180px;
+}
+
+.infoSection{
+flex-direction:column;
+align-items:center;
 }
 
 }
