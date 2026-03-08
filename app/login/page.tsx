@@ -81,6 +81,13 @@ New here? <span className="createLink" onClick={()=>setSignup(true)}>Create an a
 
 <button className="close" onClick={()=>setSignup(false)}>✕</button>
 
+<img src="/lotus.png" className="popupLotus"/>
+
+<p className="popupText">
+NutriWise stands beside patients and families with
+compassionate oncology nutrition guidance.
+</p>
+
 <h3>Create Your Account</h3>
 
 <input placeholder="Full Name" />
