@@ -264,17 +264,42 @@ through compassionate oncology nutrition care.
 <p>
 NutriWise respects and protects the privacy of all individuals
 who interact with our platform. Any personal information shared
-with NutriWise including name, contact details or consultation
-requests is used strictly for providing nutrition consultation
-and support services.
+with NutriWise including name, contact details, medical
+information or consultation requests is used strictly for the
+purpose of providing nutritional consultation and support
+services.
+
+NutriWise does not sell, rent or distribute personal data to
+third parties. Information may only be used internally for
+consultation coordination, service improvement or compliance
+with applicable regulations.
+
+All reasonable security measures are implemented to protect
+user data. By using this platform you consent to the collection
+and use of information in accordance with this privacy policy.
 </p>
 )}
 
 {policy==="refund" && (
 <p>
-Refund requests may be considered within 10 calendar days from
-the date of payment provided consultation services have not
-already been delivered.
+NutriWise aims to provide transparent and fair service policies.
+
+Refund requests may be considered if submitted within
+10 calendar days from the date of payment, provided that
+consultation services have not already been completed or
+substantially delivered.
+
+Refund requests will be reviewed by the NutriWise team to
+prevent misuse of services. If consultation has already been
+provided, scheduled sessions have been attended, or customized
+nutrition plans have been delivered, refunds may not be
+eligible.
+
+Approved refunds will be processed through the original payment
+method within a reasonable processing period.
+
+NutriWise reserves the right to decline refund requests that do
+not meet the stated conditions.
 </p>
 )}
 
@@ -282,8 +307,18 @@ already been delivered.
 <p>
 NutriWise provides evidence-based nutritional guidance intended
 to support individuals undergoing cancer treatment or recovery.
-These services do not replace medical diagnosis or treatment
-provided by licensed healthcare professionals.
+
+The information and consultation services provided by NutriWise
+are for supportive care purposes only and do not replace medical
+diagnosis, treatment or professional advice provided by
+oncologists, physicians or licensed healthcare providers.
+
+Patients should always follow the guidance of their treating
+medical professionals regarding treatment decisions.
+
+NutriWise shall not be held liable for medical outcomes resulting
+from the use or interpretation of nutritional guidance provided
+through the platform.
 </p>
 )}
 
@@ -292,7 +327,6 @@ provided by licensed healthcare professionals.
 </div>
 
 )}
-
 
 
 {/* FLOATERS */}
