@@ -1,8 +1,12 @@
 "use client"
 
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Login(){
+
+const [policy,setPolicy]=useState("")
+const [signup,setSignup]=useState(false)
 
 return(
 
@@ -58,12 +62,42 @@ every step of your journey.
 <button className="loginBtn">Login</button>
 
 <p className="signup">
-New here? <a href="#">Create an account</a>
+New here? <span className="createLink" onClick={()=>setSignup(true)}>Create an account</span>
 </p>
 
 </div>
 
 </section>
+
+
+
+{/* SIGNUP POPUP */}
+
+{signup && (
+
+<div className="popup">
+
+<div className="popupBox">
+
+<button className="close" onClick={()=>setSignup(false)}>✕</button>
+
+<h3>Create Your Account</h3>
+
+<input placeholder="Full Name" />
+
+<input placeholder="Phone Number" />
+
+<input placeholder="Email Address" />
+
+<input type="password" placeholder="Create Password" />
+
+<button className="loginBtn">Create Account</button>
+
+</div>
+
+</div>
+
+)}
 
 
 
@@ -73,12 +107,100 @@ New here? <a href="#">Create an account</a>
 
 <img src="/lotus.png" className="lotus"/>
 
+<div className="policies">
+
+<button onClick={()=>setPolicy("privacy")}>Privacy Policy</button>
+<button onClick={()=>setPolicy("refund")}>Refund Policy</button>
+<button onClick={()=>setPolicy("legal")}>Legal Disclaimer</button>
+
+</div>
+
 <p>
 NutriWise stands beside patients and families with
 compassionate oncology nutrition guidance.
 </p>
 
 </footer>
+
+
+
+{/* POLICY POPUP */}
+
+{policy && (
+
+<div className="popup">
+
+<div className="popupBox">
+
+<button className="close" onClick={()=>setPolicy("")}>✕</button>
+
+{policy==="privacy" && (
+<p>
+NutriWise respects and protects the privacy of all individuals
+who interact with our platform. Any personal information shared
+with NutriWise including name, contact details, medical
+information or consultation requests is used strictly for the
+purpose of providing nutritional consultation and support
+services.
+
+NutriWise does not sell, rent or distribute personal data to
+third parties. Information may only be used internally for
+consultation coordination, service improvement or compliance
+with applicable regulations.
+
+All reasonable security measures are implemented to protect
+user data. By using this platform you consent to the collection
+and use of information in accordance with this privacy policy.
+</p>
+)}
+
+{policy==="refund" && (
+<p>
+NutriWise aims to provide transparent and fair service policies.
+
+Refund requests may be considered if submitted within
+10 calendar days from the date of payment, provided that
+consultation services have not already been completed or
+substantially delivered.
+
+Refund requests will be reviewed by the NutriWise team to
+prevent misuse of services. If consultation has already been
+provided, scheduled sessions have been attended, or customized
+nutrition plans have been delivered, refunds may not be
+eligible.
+
+Approved refunds will be processed through the original payment
+method within a reasonable processing period.
+
+NutriWise reserves the right to decline refund requests that do
+not meet the stated conditions.
+</p>
+)}
+
+{policy==="legal" && (
+<p>
+NutriWise provides evidence-based nutritional guidance intended
+to support individuals undergoing cancer treatment or recovery.
+
+The information and consultation services provided by NutriWise
+are for supportive care purposes only and do not replace medical
+diagnosis, treatment or professional advice provided by
+oncologists, physicians or licensed healthcare providers.
+
+Patients should always follow the guidance of their treating
+medical professionals regarding treatment decisions.
+
+NutriWise shall not be held liable for medical outcomes resulting
+from the use or interpretation of nutritional guidance provided
+through the platform.
+</p>
+)}
+
+</div>
+
+</div>
+
+)}
 
 
 
@@ -119,19 +241,9 @@ compassionate oncology nutrition guidance.
 .page{
 font-family:Poppins;
 padding:40px;
-
-background:linear-gradient(
-180deg,
-#fff7fb,
-#f3ecff,
-#efe8ff,
-#fdf4ff
-);
-
+background:linear-gradient(180deg,#fff7fb,#f3ecff,#efe8ff,#fdf4ff);
 color:#4a3ca6;
 }
-
-
 
 .nav{
 display:flex;
@@ -143,8 +255,6 @@ display:flex;
 gap:25px;
 flex-wrap:wrap;
 }
-
-
 
 .logoWrap{
 display:flex;
@@ -165,45 +275,30 @@ font-size:14px;
 opacity:0.8;
 }
 
-
-
 .loginSection{
 display:flex;
 justify-content:center;
 }
 
-
-
 .loginCard{
-
 background:white;
 padding:40px;
 border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
-
 max-width:400px;
 width:100%;
-
 display:flex;
 flex-direction:column;
 gap:15px;
-
 }
 
-
-
 .loginCard input{
-
 padding:12px;
 border-radius:8px;
 border:1px solid #ddd;
-
 }
 
-
-
 .loginBtn{
-
 background:#5e3ed6;
 color:white;
 padding:14px;
@@ -211,40 +306,80 @@ border:none;
 border-radius:10px;
 font-weight:600;
 cursor:pointer;
-
 }
-
-
 
 .signup{
 text-align:center;
 font-size:14px;
 }
 
-
+.createLink{
+color:#7b5cff;
+cursor:pointer;
+}
 
 .footer{
-
 margin-top:80px;
 text-align:center;
 padding:40px;
-
-background:linear-gradient(
-180deg,
-#f3ecff,
-#efe8ff
-);
-
+background:linear-gradient(180deg,#f3ecff,#efe8ff);
 }
 
+.policies{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:10px;
+flex-wrap:wrap;
+}
 
+.policies button{
+background:none;
+border:none;
+color:#4a3ca6;
+cursor:pointer;
+font-size:14px;
+}
+
+.policies button:hover{
+text-decoration:underline;
+color:#7b5cff;
+}
 
 .lotus{
 width:70px;
 margin-bottom:10px;
 }
 
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
+.popupBox{
+background:white;
+padding:30px;
+max-width:420px;
+border-radius:12px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.close{
+align-self:flex-end;
+background:none;
+border:none;
+font-size:18px;
+cursor:pointer;
+}
 
 .floaters{
 position:fixed;
@@ -263,12 +398,6 @@ border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 6px 20px rgba(120,90,255,0.35);
-transition:0.3s;
-}
-
-.floaters a:hover{
-transform:scale(1.1);
 }
 
 .floaters img{
@@ -277,24 +406,16 @@ height:20px;
 filter:brightness(0) invert(1);
 }
 
-
-
-/* MOBILE */
-
 @media(max-width:768px){
-
 .page{
 padding:20px;
 }
-
 .logo{
 width:200px;
 }
-
 .loginCard{
 padding:30px;
 }
-
 }
 
 `}</style>
