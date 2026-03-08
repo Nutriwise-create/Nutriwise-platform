@@ -1,13 +1,15 @@
 "use client"
 
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Stories(){
+
+const [policy,setPolicy]=useState("")
 
 return(
 
 <main className="page">
-
 
 {/* NAVIGATION */}
 
@@ -213,6 +215,29 @@ preventive care
 
 </section>
 
+  {/* SHARE STORY */}
+
+<section className="shareStory">
+
+<h2>Share Your Story</h2>
+
+<p>
+Your journey could inspire someone who is currently fighting
+their own battle. If you would like your story to give hope
+to others, we would be honored to share it.
+</p>
+
+<button
+className="shareBtn"
+onClick={()=>setPolicy("share")}
+> 
+ShareYour Story to Inspire Others
+</button>
+
+</section>
+
+  
+
 
 
 {/* FOOTER */}
@@ -221,13 +246,131 @@ preventive care
 
 <img src="/lotus.png" className="lotus"/>
 
+<div className="policies">
+
+<button onClick={()=>setPolicy("privacy")}>Privacy Policy</button>
+<button onClick={()=>setPolicy("refund")}>Refund Policy</button>
+<button onClick={()=>setPolicy("legal")}>Legal Disclaimer</button>
+
+</div>
+
 <p>
-NutriWise stands beside patients and families, offering
-compassionate oncology nutrition support through every
-stage of their journey.
+NutriWise is committed to supporting cancer patients
+through compassionate oncology nutrition guidance.
 </p>
 
 </footer>
+
+
+
+{/* POLICY POPUPS */}
+
+{policy && (
+
+<div className="popup">
+
+<div className="popupBox">
+
+<button className="close" onClick={()=>setPolicy("")}>✕</button>
+
+
+
+{policy==="share" && (
+
+<div>
+
+<h3>Share Your Story</h3>
+
+<p>
+If you would like your journey to inspire others,
+please send your story to:
+</p>
+
+<p><b>join.nutriwise@outlook.com</b></p>
+
+</div>
+
+)}
+
+
+
+{policy==="privacy" && (
+
+<p>
+NutriWise respects and protects the privacy of all individuals
+who interact with our platform. Any personal information shared
+with NutriWise including name, contact details, medical
+information or consultation requests is used strictly for the
+purpose of providing nutritional consultation and support
+services.
+
+NutriWise does not sell, rent or distribute personal data to
+third parties. Information may only be used internally for
+consultation coordination, service improvement or compliance
+with applicable regulations.
+
+All reasonable security measures are implemented to protect
+user data. By using this platform you consent to the collection
+and use of information in accordance with this privacy policy.
+</p>
+
+)}
+
+
+
+{policy==="refund" && (
+
+<p>
+NutriWise aims to provide transparent and fair service policies.
+
+Refund requests may be considered if submitted within
+10 calendar days from the date of payment, provided that
+consultation services have not already been completed or
+substantially delivered.
+
+Refund requests will be reviewed by the NutriWise team to
+prevent misuse of services. If consultation has already been
+provided, scheduled sessions have been attended, or customized
+nutrition plans have been delivered, refunds may not be
+eligible.
+
+Approved refunds will be processed through the original payment
+method within a reasonable processing period.
+
+NutriWise reserves the right to decline refund requests that do
+not meet the stated conditions.
+</p>
+
+)}
+
+
+
+{policy==="legal" && (
+
+<p>
+NutriWise provides evidence-based nutritional guidance intended
+to support individuals undergoing cancer treatment or recovery.
+
+The information and consultation services provided by NutriWise
+are for supportive care purposes only and do not replace medical
+diagnosis, treatment or professional advice provided by
+oncologists, physicians or licensed healthcare providers.
+
+Patients should always follow the guidance of their treating
+medical professionals regarding treatment decisions.
+
+NutriWise shall not be held liable for medical outcomes resulting
+from the use or interpretation of nutritional guidance provided
+through the platform.
+</p>
+
+)}
+
+</div>
+
+</div>
+
+)}
 
 
 
@@ -268,17 +411,9 @@ stage of their journey.
 .page{
 font-family:Poppins;
 padding:40px;
-background:linear-gradient(
-180deg,
-#fff7fb,
-#f3ecff,
-#efe8ff,
-#fdf4ff
-);
+background:linear-gradient(180deg,#fff7fb,#f3ecff,#efe8ff,#fdf4ff);
 color:#4a3ca6;
 }
-
-
 
 .nav{
 display:flex;
@@ -291,8 +426,6 @@ gap:25px;
 flex-wrap:wrap;
 }
 
-
-
 .logoWrap{
 display:flex;
 justify-content:center;
@@ -301,9 +434,8 @@ margin:40px 0;
 
 .logo{
 width:260px;
+filter:drop-shadow(0 0 30px rgba(200,150,255,0.6));
 }
-
-
 
 .header{
 text-align:center;
@@ -312,59 +444,65 @@ margin:auto;
 margin-bottom:60px;
 }
 
+.team{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+max-width:1000px;
+margin:auto;
+}
 
-
-.story{
-display:flex;
-gap:25px;
+.card{
 background:white;
 padding:25px;
 border-radius:15px;
-margin-bottom:30px;
+text-align:center;
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
-.story img{
-width:120px;
-height:120px;
+.card img{
+width:90px;
+height:90px;
 border-radius:50%;
-object-fit:cover;
+margin-bottom:10px;
 }
 
-
-
-.subtitle{
+.title{
 font-weight:600;
 margin-bottom:10px;
 }
 
-
-
-.timeline{
-display:flex;
-align-items:center;
-gap:10px;
-margin-top:15px;
+.join{
+text-align:center;
+max-width:700px;
+margin:80px auto;
 }
 
-.line{
-height:2px;
-width:40px;
-background:#6d4df5;
+.joinBtn{
+background:#7b5cff;
+color:white;
+padding:14px 32px;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
 }
-
-
 
 .footer{
 margin-top:80px;
 text-align:center;
-padding:40px;
+padding:30px;
+background:linear-gradient(180deg,#f3ecff,#efe8ff);
+border-radius:20px;
+}
 
-background:linear-gradient(
-180deg,
-#f3ecff,
-#efe8ff
-);
+.policies{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:10px;
+flex-wrap:wrap;
 }
 
 .lotus{
@@ -372,7 +510,32 @@ width:70px;
 margin-bottom:10px;
 }
 
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
+.popupBox{
+background:white;
+padding:30px;
+max-width:500px;
+border-radius:10px;
+}
+
+.close{
+float:right;
+background:none;
+border:none;
+font-size:18px;
+cursor:pointer;
+}
 
 .floaters{
 position:fixed;
@@ -391,12 +554,6 @@ border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 6px 20px rgba(120,90,255,0.35);
-transition:0.3s;
-}
-
-.floaters a:hover{
-transform:scale(1.1);
 }
 
 .floaters img{
@@ -405,81 +562,16 @@ height:20px;
 filter:brightness(0) invert(1);
 }
 
-
-
-/* STORY FORMAT IMPROVEMENTS */
-
-.stories{
-max-width:900px;
-margin:auto;
+@media(max-width:900px){
+.team{
+grid-template-columns:repeat(2,1fr);
+}
 }
 
-.story{
-display:flex;
-gap:20px;
-background:white;
-padding:20px;
-border-radius:14px;
-margin-bottom:24px;
-box-shadow:0 4px 14px rgba(0,0,0,0.06);
-align-items:flex-start;
+@media(max-width:600px){
+.team{
+grid-template-columns:1fr;
 }
-
-.story img{
-width:95px;
-height:95px;
-border-radius:50%;
-object-fit:cover;
-flex-shrink:0;
-}
-
-.story h3{
-margin-bottom:4px;
-font-size:18px;
-}
-
-.subtitle{
-font-weight:600;
-font-size:13px;
-opacity:0.8;
-margin-bottom:10px;
-}
-
-.story p{
-font-size:14px;
-line-height:1.55;
-margin-bottom:10px;
-color:#4a3ca6;
-}
-
-.story p:first-of-type{
-font-weight:600;
-font-size:14px;
-color:#6d4df5;
-}
-
-.story div{
-max-width:600px;
-}
-
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.page{
-padding:20px;
-}
-
-.story{
-flex-direction:column;
-text-align:center;
-}
-
-.story img{
-margin:auto;
-}
-
 }
 
 `}</style>
