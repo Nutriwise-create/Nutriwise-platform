@@ -12,7 +12,7 @@ return(
 <main className="page">
 
 {/* NAVBAR */}
-
+f
 <nav className="nav">
 
 <div></div>
@@ -142,7 +142,9 @@ and recovery.
 
 <div className="scroll">
 
-{/* row duplicated for continuous scroll */}
+<div className="track">
+
+{/* FIRST SET */}
 
 <div className="card">
 <img src="https://randomuser.me/api/portraits/women/65.jpg"/>
@@ -172,7 +174,8 @@ and recovery.
 <p>The diet guidance helped me maintain energy levels during treatment.</p>
 </div>
 
-{/* duplicated cards */}
+
+{/* DUPLICATE SET */}
 
 <div className="card">
 <img src="https://randomuser.me/api/portraits/women/65.jpg"/>
@@ -186,6 +189,22 @@ and recovery.
 <h4>Anil Patel</h4>
 <p>Ahmedabad</p>
 <p>Small nutritional changes made treatment much easier to handle.</p>
+</div>
+
+<div className="card">
+<img src="https://randomuser.me/api/portraits/women/50.jpg"/>
+<h4>Sneha Joshi</h4>
+<p>Bangalore</p>
+<p>I felt supported and guided throughout my recovery journey.</p>
+</div>
+
+<div className="card">
+<img src="https://randomuser.me/api/portraits/men/40.jpg"/>
+<h4>Rahul Shah</h4>
+<p>Delhi</p>
+<p>The diet guidance helped me maintain energy levels during treatment.</p>
+</div>
+
 </div>
 
 </div>
@@ -213,7 +232,9 @@ to access the right guidance during their healing journey.
 </p>
 
 <Link href="/donate">
-<button className="supportBtn">Donate Now</button>
+<button className="supportBtn" onClick={()=>setPolicy("donate")}>
+Donate Now
+</button>
 </Link>
 
 </section>
@@ -315,6 +336,30 @@ through the platform.
 </p>
 )}
 
+{policy==="donate" && (
+<div>
+
+<h3>Support Cancer Nutrition Care</h3>
+
+<p>
+Your support helps NutriWise provide compassionate nutrition guidance
+to cancer patients who may not have access to structured nutritional
+support during treatment and recovery.
+</p>
+
+<p>
+Every contribution helps extend strength, guidance and hope
+to patients navigating one of the most challenging journeys
+of their lives.
+</p>
+
+<button className="donateBtn">
+Donate Coming Soon
+</button>
+
+</div>
+)}
+  
 </div>
 
 </div>
@@ -368,6 +413,17 @@ display:flex;
 justify-content:space-between;
 }
 
+.donateBtn{
+background:#7b5cff;
+color:white;
+padding:12px 28px;
+border:none;
+border-radius:20px;
+margin-top:15px;
+cursor:pointer;
+font-size:15px;
+box-shadow:0 6px 18px rgba(120,90,255,0.3);
+}
 .links{
 display:flex;
 gap:25px;
@@ -472,12 +528,15 @@ text-align:center;
 }
 
 .scroll{
+overflow:hidden;
+width:100%;
+}
+
+.track{
 display:flex;
 gap:25px;
-padding:20px;
-overflow:hidden;
 width:max-content;
-animation:scrollLoop 35s linear infinite;
+animation:scrollLoop 40s linear infinite;
 }
 
 .scroll::-webkit-scrollbar{
@@ -494,7 +553,7 @@ display:none;
 transform:translateX(0);
 }
 100%{
-transform:translateX(-100%);
+transform:translateX(-50%);
 }
 }
 
