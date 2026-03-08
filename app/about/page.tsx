@@ -1,8 +1,11 @@
 "use client"
 
 import Link from "next/link"
+import { useState } from "react"
 
 export default function About(){
+
+const [policy,setPolicy]=useState("")
 
 return(
 
@@ -38,7 +41,7 @@ return(
 
 {/* HOW NUTRIWISE WAS BORN */}
 
-<section className="story">
+<section className="story storyCard">
 
 <h2>How NutriWise Was Born</h2>
 
@@ -74,7 +77,7 @@ navigate nutrition and recovery alone.
 
 {/* FOUNDER MESSAGE */}
 
-<section className="founder">
+<section className="founder founderCard">
 
 <img src="/founder.jpeg" className="founderImg"/>
 
@@ -103,6 +106,12 @@ continue their fight.
 Every patient deserves care, dignity and support during treatment.
 NutriWise exists to ensure that guidance is always available when
 patients need it the most.
+</p>
+
+<p className="founderSign">
+— Manali Chandan
+<br/>
+Founder, NutriWise
 </p>
 
 </div>
@@ -150,12 +159,61 @@ nutritional guidance alongside medical treatment.
 
 <img src="/lotus.png" className="lotus"/>
 
+<div className="policies">
+
+<button onClick={()=>setPolicy("privacy")}>Privacy Policy</button>
+<button onClick={()=>setPolicy("refund")}>Refund Policy</button>
+<button onClick={()=>setPolicy("legal")}>Legal Disclaimer</button>
+
+</div>
+
 <p>
-NutriWise is committed to supporting cancer patients with
-compassionate and evidence-based nutritional guidance.
+NutriWise is committed to supporting cancer patients through
+compassionate oncology nutrition guidance and education.
 </p>
 
 </footer>
+
+
+
+{/* POLICY POPUP */}
+
+{policy && (
+
+<div className="popup">
+
+<div className="popupBox">
+
+<button className="close" onClick={()=>setPolicy("")}>✕</button>
+
+{policy==="privacy" && (
+<p>
+NutriWise respects and protects the privacy of all individuals
+who interact with our platform. Information shared with NutriWise
+is used only for consultation coordination and service delivery.
+</p>
+)}
+
+{policy==="refund" && (
+<p>
+Refund requests may be considered within 10 days of payment if
+consultation services have not already been delivered.
+</p>
+)}
+
+{policy==="legal" && (
+<p>
+NutriWise provides nutritional guidance intended to support
+patients during treatment. This does not replace medical advice
+from oncologists or healthcare professionals.
+</p>
+)}
+
+</div>
+
+</div>
+
+)}
 
 
 
@@ -196,19 +254,9 @@ compassionate and evidence-based nutritional guidance.
 .page{
 font-family:Poppins;
 padding:40px;
-
-background:linear-gradient(
-180deg,
-#fff7fb,
-#f3ecff,
-#efe8ff,
-#fdf4ff
-);
-
+background:linear-gradient(180deg,#fff7fb,#f3ecff,#efe8ff,#fdf4ff);
 color:#4a3ca6;
 }
-
-
 
 .nav{
 display:flex;
@@ -221,8 +269,6 @@ gap:25px;
 flex-wrap:wrap;
 }
 
-
-
 .logoWrap{
 display:flex;
 justify-content:center;
@@ -234,15 +280,18 @@ width:260px;
 filter:drop-shadow(0 0 30px rgba(200,150,255,0.6));
 }
 
-
-
 .story{
 max-width:800px;
 margin:60px auto;
 line-height:1.8;
 }
 
-
+.storyCard{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,0.05);
+}
 
 .founder{
 display:flex;
@@ -252,6 +301,13 @@ max-width:900px;
 margin:80px auto;
 }
 
+.founderCard{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,0.05);
+}
+
 .founderImg{
 width:160px;
 height:160px;
@@ -259,7 +315,11 @@ border-radius:50%;
 object-fit:cover;
 }
 
-
+.founderSign{
+margin-top:20px;
+font-weight:600;
+font-size:16px;
+}
 
 .missionVision{
 display:flex;
@@ -277,19 +337,11 @@ width:320px;
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
-
-
 .footer{
 margin-top:80px;
 text-align:center;
 padding:30px;
-
-background:linear-gradient(
-180deg,
-#f3ecff,
-#efe8ff
-);
-
+background:linear-gradient(180deg,#f3ecff,#efe8ff);
 border-radius:20px;
 }
 
@@ -298,7 +350,48 @@ width:70px;
 margin-bottom:10px;
 }
 
+.policies{
+display:flex;
+justify-content:center;
+gap:20px;
+margin:15px 0;
+flex-wrap:wrap;
+}
 
+.policies button{
+background:none;
+border:none;
+color:#6d4df5;
+cursor:pointer;
+font-size:14px;
+}
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.popupBox{
+background:white;
+padding:30px;
+max-width:500px;
+border-radius:10px;
+}
+
+.close{
+float:right;
+background:none;
+border:none;
+font-size:18px;
+cursor:pointer;
+}
 
 .floaters{
 position:fixed;
@@ -330,9 +423,6 @@ width:20px;
 height:20px;
 filter:brightness(0) invert(1);
 }
-
-
-/* MOBILE RESPONSIVE */
 
 @media(max-width:768px){
 
