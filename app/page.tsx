@@ -671,6 +671,23 @@ align-items:center;
 width:200px;
 }
 
+.policies{
+display:flex;
+justify-content:center;
+gap:20px;
+margin:15px 0;
+flex-wrap:wrap;
+}
+
+.policies button{
+background:none;
+border:none;
+color:#6d4df5;
+cursor:pointer;
+font-size:14px;
+padding:0;
+}
+
 .hero h1{
 font-size:24px;
 }
