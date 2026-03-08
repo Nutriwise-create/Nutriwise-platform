@@ -12,7 +12,6 @@ return(
 
 <main className="page">
 
-
 {/* NAVIGATION */}
 
 <nav className="nav">
@@ -87,11 +86,12 @@ Create an account
 <img src="/lotus.png" className="popupLotus"/>
 
 <p className="popupText">
-NutriWise stands beside patients and families with
-compassionate oncology nutrition guidance.
+Welcome to NutriWise
 </p>
 
 <h3>Create Your Account</h3>
+
+<div className="signupFields">
 
 <input placeholder="Full Name" />
 
@@ -101,7 +101,9 @@ compassionate oncology nutrition guidance.
 
 <input type="password" placeholder="Create Password" />
 
-<button className="loginBtn">Create Account</button>
+</div>
+
+<button className="createBtn">Create Account</button>
 
 </div>
 
@@ -146,22 +148,22 @@ compassionate oncology nutrition guidance.
 
 {policy==="privacy" && (
 <p>
-NutriWise respects and protects the privacy of all individuals who interact with our platform. 
-Personal information shared with NutriWise including name, contact details and consultation 
+NutriWise respects and protects the privacy of all individuals who interact with our platform.
+Personal information shared with NutriWise including name, contact details and consultation
 information is used strictly for providing nutritional support services.
 </p>
 )}
 
 {policy==="refund" && (
 <p>
-Refund requests may be considered within 10 days of payment provided consultation services 
+Refund requests may be considered within 10 days of payment provided consultation services
 have not already been delivered or substantially completed.
 </p>
 )}
 
 {policy==="legal" && (
 <p>
-NutriWise provides evidence-based nutrition guidance to support patients undergoing treatment. 
+NutriWise provides evidence-based nutrition guidance to support patients undergoing treatment.
 Our services do not replace medical advice from oncologists or healthcare professionals.
 </p>
 )}
@@ -178,27 +180,27 @@ Our services do not replace medical advice from oncologists or healthcare profes
 
 <div className="floaters">
 
-<a href="https://wa.me/918320867088" target="_blank" rel="noopener noreferrer">
+<a href="https://wa.me/918320867088" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"/>
 </a>
 
-<a href="https://instagram.com/nutriwise_26" target="_blank" rel="noopener noreferrer">
+<a href="https://instagram.com/nutriwise_26" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"/>
 </a>
 
-<a href="https://www.linkedin.com/company/nutriwise26/" target="_blank" rel="noopener noreferrer">
+<a href="https://www.linkedin.com/company/nutriwise26/" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"/>
 </a>
 
-<a href="https://www.youtube.com/@NutriWise_26" target="_blank" rel="noopener noreferrer">
+<a href="https://www.youtube.com/@NutriWise_26" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"/>
 </a>
 
-<a href="https://x.com/NutriWise26" target="_blank" rel="noopener noreferrer">
+<a href="https://x.com/NutriWise26" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg"/>
 </a>
 
-<a href="mailto:join.nutriwise@outlook.com" target="_blank" rel="noopener noreferrer">
+<a href="mailto:join.nutriwise@outlook.com">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"/>
 </a>
 
@@ -291,6 +293,77 @@ cursor:pointer;
 font-weight:600;
 }
 
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.popupBox{
+background:white;
+padding:35px;
+max-width:420px;
+width:90%;
+border-radius:14px;
+text-align:center;
+box-shadow:0 10px 35px rgba(0,0,0,0.15);
+}
+
+.popupLotus{
+width:60px;
+margin:0 auto 10px auto;
+display:block;
+}
+
+.popupText{
+font-size:16px;
+font-weight:600;
+margin-bottom:15px;
+color:#4a3ca6;
+}
+
+.signupFields{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:15px;
+}
+
+.signupFields input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+.createBtn{
+margin-top:15px;
+width:100%;
+background:#5e3ed6;
+color:white;
+padding:14px;
+border:none;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+}
+
+.close{
+position:absolute;
+right:20px;
+top:15px;
+background:none;
+border:none;
+font-size:18px;
+cursor:pointer;
+}
+
 .footer{
 margin-top:80px;
 text-align:center;
@@ -316,47 +389,6 @@ background:none;
 border:none;
 color:#4a3ca6;
 cursor:pointer;
-}
-
-.popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.popupBox{
-background:white;
-padding:30px;
-max-width:400px;
-border-radius:10px;
-width:100%;
-}
-
-.close{
-float:right;
-background:none;
-border:none;
-font-size:18px;
-cursor:pointer;
-}
-
-.popupLotus{
-width:90px;
-display:block;
-margin:0 auto 10px auto;
-}
-
-.popupText{
-font-size:13px;
-text-align:center;
-margin-bottom:15px;
-opacity:0.8;
 }
 
 .floaters{
