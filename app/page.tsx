@@ -685,7 +685,6 @@ border:none;
 color:#6d4df5;
 cursor:pointer;
 font-size:14px;
-padding:0;
 }
 
 .hero h1{
