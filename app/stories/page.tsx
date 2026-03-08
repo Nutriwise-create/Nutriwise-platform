@@ -431,6 +431,21 @@ margin-bottom:10px;
 flex-wrap:wrap;
 }
 
+.policies button{
+background:none;
+border:none;
+color:#4a3ca6;
+font-size:14px;
+cursor:pointer;
+padding:6px 12px;
+transition:0.3s;
+}
+
+.policies button:hover{
+color:#7b5cff;
+text-decoration:underline;
+}
+
 .popup{
 position:fixed;
 top:0;
@@ -456,21 +471,6 @@ background:none;
 border:none;
 font-size:18px;
 cursor:pointer;
-}
-
-.policies button{
-background:none;
-border:none;
-color:#4a3ca6;
-font-size:14px;
-cursor:pointer;
-padding:6px 12px;
-transition:0.3s;
-}
-
-.policies button:hover{
-color:#7b5cff;
-text-decoration:underline;
 }
 
 `}</style>
